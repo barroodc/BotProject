@@ -1,22 +1,14 @@
-import java.util.*;
+
+
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class AvaBirthdayQA {
-    /*
-    If the user should pick James first I need to alter this class so I
-    am not asking the same exact questions twice.
-
-    Also, if user enters invalid Month
-    or if user enters number outside of number of days in the calendar
-    have them reenter the date.
-     */
 
     final static Scanner sc = new Scanner(System.in);
-
     public static String month;
     public static int day;
     public static int year;
-
 
     static void birthMonth() throws InterruptedException{
         System.out.println("What is the name of the month you were born in?");

@@ -1,15 +1,11 @@
 import java.text.ParseException;
-import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
-public class JamesIntro extends ChatBot {
+public class JamesIntro {
     final static Scanner sc = new Scanner(System.in);
 
-    public JamesIntro(String name, String botBirthMonth, int botBirthDay, int botBirthYear) {
-        super(name, botBirthMonth, botBirthDay, botBirthYear);
-    }
-
-    static void greet() throws InterruptedException, ParseException {
+    static void greet() throws InterruptedException {
         System.out.println("I know this is awkward. Who wants to talk to their computer right?");
         TimeUnit.SECONDS.sleep(3);
         System.out.println("Anyway again my name is James");
@@ -48,7 +44,6 @@ public class JamesIntro extends ChatBot {
                 JamesBirthdayQA.yearOfBirth();
                 JamesZodiac.zodiacSign();
             }
-            //else if statement will appear here later once Ava's class is created.
         }
     }
 }
