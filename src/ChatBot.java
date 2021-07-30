@@ -1,23 +1,6 @@
 import java.text.ParseException;
 
 
-/*
-Friend
-
-Consider recoding the beginning half in order to have male and female version.
-Maybe the ChatBot will switch to his male or female friend depending on preference.
-
-Also I should replace all awkward String and primitive type variable instantiations
-by putting initial String and int names at the top of the program.
-
-It would also be cool if Ava, James and the User could all play a game together.
-First one game with Ava.
-Then one game with James
-Then one final game with both.
-
- */
-
-import java.text.ParseException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -45,7 +28,7 @@ public class ChatBot {
         welcomeMessage();
     }
 
-    static void welcomeMessage() throws InterruptedException, ParseException {
+    static void welcomeMessage() throws InterruptedException {
         System.out.println("Welcome and thank you for choosing this interactive experience.");
         TimeUnit.SECONDS.sleep(3);
         System.out.println("My name is James. Im a male cyborg and Im interested in getting to know you better.");

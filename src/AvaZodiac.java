@@ -120,6 +120,7 @@ public class AvaZodiac {
 
     static void zodiacSign() {
         System.out.println("You probably already know this but your Zodiac sign is: " + zodiac_sign(AvaBirthdayQA.month,AvaBirthdayQA.day));
+        AvaGame.gameOneIntro();
     }
 }
 
