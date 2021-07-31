@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.text.ParseException;
 
 
@@ -22,13 +23,13 @@ public class ChatBot {
     }
 
 
-    public static void main(String[] args) throws ParseException, InterruptedException {
+    public static void main(String[] args) throws ParseException, InterruptedException, IOException {
         ChatBot maleFriend = new ChatBot("James", "May", 27, 1994);
         ChatBot femaleFriend = new ChatBot("Ava", "October", 17, 1997);
         welcomeMessage();
     }
 
-    static void welcomeMessage() throws InterruptedException {
+    static void welcomeMessage() throws InterruptedException, IOException {
         System.out.println("Welcome and thank you for choosing this interactive experience.");
         TimeUnit.SECONDS.sleep(3);
         System.out.println("My name is James. Im a male cyborg and Im interested in getting to know you better.");

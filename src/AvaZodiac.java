@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AvaZodiac {
@@ -118,9 +119,10 @@ public class AvaZodiac {
         return astro_Sign;
     }
 
-    static void zodiacSign() {
+    static void zodiacSign() throws IOException {
         System.out.println("You probably already know this but your Zodiac sign is: " + zodiac_sign(AvaBirthdayQA.month,AvaBirthdayQA.day));
         AvaGame.gameOneIntro();
+
     }
 }
 

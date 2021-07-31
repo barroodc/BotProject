@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -28,7 +29,7 @@ public class AvaIntro {
 
     }
 
-    static void birthDayIntro() throws InterruptedException {
+    static void birthDayIntro() throws InterruptedException, IOException {
         System.out.println("So, like my brother, I am absolutely fascinated with zodiac signs.");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("My birthday is 10/17/1997.");
