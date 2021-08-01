@@ -119,7 +119,7 @@ public class AvaZodiac {
         return astro_Sign;
     }
 
-    static void zodiacSign() throws IOException {
+    static void zodiacSign() throws IOException, InterruptedException {
         System.out.println("You probably already know this but your Zodiac sign is: " + zodiac_sign(AvaBirthdayQA.month,AvaBirthdayQA.day));
         AvaGame.gameOneIntro();
 
