@@ -29,7 +29,7 @@ public class JamesBirthdayQA extends ChatBot {
         if (month.equals("May") || month.equals("may")){
             System.out.println("Awesome we were born in the same month!");
         } else if (month.equals("October") || month.equals("october")) {
-            System.out.println("You have the same birthday as my younger sister.");
+            System.out.println("You were born in the same month as my younger sister!");
             TimeUnit.SECONDS.sleep(2);
         } else {
             System.out.println("Darn, not the same month but maybe we'll be the same day or even year?");

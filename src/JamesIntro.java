@@ -33,6 +33,7 @@ public class JamesIntro {
             System.out.println("So my birthday is 05/27/1994");
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Do you mind if I ask you what your birthday is?");
+            System.out.print("> ");
             //Think of conditional in case they say yes.
             TimeUnit.SECONDS.sleep(2);
             String answer = sc.next();
@@ -44,6 +45,13 @@ public class JamesIntro {
                 JamesBirthdayQA.yearOfBirth();
                 JamesZodiac.zodiacSign();
             }
+            } else if (yesOrNo.equals("No") || yesOrNo.equals("no") || yesOrNo.equals("Not really")){
+                   System.out.println("Thats more than okay.");
+                   System.out.println("I do insist on us though playing a quick game of Tic Tac Toe");
+                   System.out.println("I am so sick of playing my sister. I need new competition.");
+                   JamesGame.gameIntro();
+                   JamesGame.gamePlay();
+              }
         }
     }
-}
+

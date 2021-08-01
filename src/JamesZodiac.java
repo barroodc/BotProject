@@ -119,8 +119,11 @@ public class JamesZodiac {
     }
 
 
-    static void zodiacSign() {
+    static void zodiacSign() throws InterruptedException {
         System.out.println("You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesBirthdayQA.month,JamesBirthdayQA.day));
+        JamesGame.gameIntro();
+        JamesGame.gamePlay();
+
     }
 
 }

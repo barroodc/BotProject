@@ -58,7 +58,7 @@ public class ChatBot {
                 JamesIntro.birthdayIntro();
                 valid = true;
 
-            } else if (answer.equals("Ava") || answer.equals("ava")) {
+            } else if (answer.equals("Ava") || answer.equals("ava") || answer.equals("Your sister") || answer.equals("your sister")) {
                 System.out.println("Hey, no hard feelings, I'll connect you with her now.");
                 TimeUnit.SECONDS.sleep(4);
                 AvaIntro.avaGreet();
