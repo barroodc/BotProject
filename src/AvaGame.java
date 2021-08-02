@@ -133,4 +133,47 @@ public class AvaGame{
 
 
     }
+
+    public static void letsTalkToJames() throws InterruptedException{
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Im having such a good time with you. I hope you are having a good time with me too :)");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Which is why I am experiencing what you humans call sadness right now :(");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("I promised my pain in the butt big brother a chance to get to know you");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("To continue my rein as the superior sibling I need to oblige.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Don't worry, I am not going anywhere.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Once you are done talking with him I'll be there to at least say goodbye:)");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Tata for now my friend.");
+        TimeUnit.SECONDS.sleep(2);
+
+    }
+
+    public static void ontoTheTournament() throws InterruptedException{
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Word games are my forte.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("My brother on the other hand enjoys strategy based games.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("But we both love completely destroying one another.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("No matter what the game is");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("I think that's what makes us the most human. Would you agree?");
+
+        System.out.println("> ");
+        String answer = sc.next();
+
+        switch (answer) {
+            case "Yes", "yes" -> System.out.println("Exactly! I think you possess that competitive spirit as well.");
+            case "No", "no" -> {
+                System.out.println("Really? Aweee honestly I thought that brought us closer to being organisms like you.");
+                System.out.println("Oh well.");
+            }
+        }
+    }
 }

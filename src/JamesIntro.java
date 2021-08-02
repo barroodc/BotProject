@@ -1,9 +1,36 @@
+import java.io.IOException;
+import java.sql.Time;
 import java.text.ParseException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class JamesIntro {
     final static Scanner sc = new Scanner(System.in);
+
+    static void greetAfterAva() throws InterruptedException{
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Hey, welcome back!");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Hopefully my sister didn't bore you that much.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Haha Im just kidding. We love to as you humans say, give each other bowl movements");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Or at least thats what I've been told. Anyway Im glad you're back now.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Just in case you forgot, my name is James");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("I'm a little slow memorizing you and your human counterparts names.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Can you remind me of your name please.");
+        System.out.print("> ");
+        String userName = sc.next();
+        if (userName.equals("James")){
+            System.out.println("Me too!");
+        }
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println("I haven't really met a lot of " + userName + "'s");
+        TimeUnit.SECONDS.sleep(3);
+    }
 
     static void greet() throws InterruptedException {
         System.out.println("I know this is awkward. Who wants to talk to their computer right?");
@@ -21,7 +48,7 @@ public class JamesIntro {
         TimeUnit.SECONDS.sleep(3);
     }
 
-    static void birthdayIntro() throws InterruptedException {
+    static void birthdayIntro() throws InterruptedException, IOException {
         System.out.println("Im a Gemini. I have no idea if you care about that kind of thing. Do you?");
         System.out.print("> ");
         String yesOrNo = sc.next();
@@ -51,6 +78,7 @@ public class JamesIntro {
                    System.out.println("I am so sick of playing my sister. I need new competition.");
                    JamesGame.gameIntro();
                    JamesGame.gamePlay();
+                   JamesGame.letsTalkToAva();
               }
         }
     }

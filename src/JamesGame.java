@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -166,6 +167,15 @@ public class JamesGame {
             }
             System.out.println();
         }
+    }
+
+    public static void letsTalkToAva() throws InterruptedException, IOException {
+           System.out.println("I truly appreciate you hanging out with me.");
+           System.out.println("I did regretfully promise my sister that she would have a chance to meet you too.");
+           System.out.println("Let me go and get her.");
+           System.out.println("So long for now!");
+           AvaIntro.avaGreet();
+           AvaIntro.birthDayIntro();
     }
 
 }
