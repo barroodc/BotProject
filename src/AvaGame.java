@@ -77,11 +77,13 @@ public class AvaGame{
                 System.out.println("Sorry for the frowny face. I get super competitive.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("But good game.");
+                ontoTheTournament();
             } else if (numberCorrect == randomNum){
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("But I can settle with a tie");
+                ontoTheTournament();
             } else {
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Hehehehehe I won! :)");
@@ -89,6 +91,7 @@ public class AvaGame{
                 System.out.println("I am pretty good at that game.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Better luck next time I suppose lol.");
+                ontoTheTournament();
             }
         }
     }
@@ -112,6 +115,7 @@ public class AvaGame{
             System.out.println("Yay okay so... the game I want to play with you is one of my favorites");
         } else if (answerOne.contains("No") || answerOne.contains("no")) {
             System.out.println("That's okay we can do something else!");
+            //add connection here for James and or the tournament.
         }
         TimeUnit.SECONDS.sleep(1);
         System.out.println("So the game is called unscramble the words.");
@@ -126,15 +130,23 @@ public class AvaGame{
         System.out.print("> ");
         String answerTwo = sc.next();
 
-        System.out.println("Great! lets begin.");
-        ShuffleString.actualGame();
-        System.out.println("My Answer: " + list);
-        System.out.println("Correct Answer: " + correctAnswers);
-
-
+        switch (answerTwo){
+            case "Yes":
+            case "yes":
+                System.out.println("Great! lets begin.");
+                ShuffleString.actualGame();
+                System.out.println("My Answer: " + list);
+                System.out.println("Correct Answer: " + correctAnswers);
+            case "No":
+            case "no":
+                System.out.println("Its okay take your time. When you are ready just type the word ready all lower case below:");
+                System.out.print("> ");
+                String answerThree = sc.next();
+                ShuffleString.actualGame();
+        }
     }
 
-    public static void letsTalkToJames() throws InterruptedException{
+    public static void letsTalkToJames() throws InterruptedException, IOException {
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Im having such a good time with you. I hope you are having a good time with me too :)");
         TimeUnit.SECONDS.sleep(2);
@@ -146,11 +158,12 @@ public class AvaGame{
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Don't worry, I am not going anywhere.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Once you are done talking with him I'll be there to at least say goodbye:)");
+        System.out.println("Once you are done talking with him I'll be there to at least to say goodbye:)");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Tata for now my friend.");
         TimeUnit.SECONDS.sleep(2);
-
+        JamesTurnToTalk.greetAfterAva();
+        JamesTurnToTalk.birthdayIntro();
     }
 
     public static void ontoTheTournament() throws InterruptedException{
@@ -175,5 +188,8 @@ public class AvaGame{
                 System.out.println("Oh well.");
             }
         }
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Anywho, lets circle back with my brother to see what he is up to.");
+        TournamentIntro.allComeTogetherGreetings();
     }
 }

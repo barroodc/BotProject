@@ -4,8 +4,8 @@ public class TournamentIntro {
 
     final static Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args){
-        System.out.println("test");
+    static void allComeTogetherGreetings(){
+        System.out.println("Hello world! Time for the show! :)");
     }
 
 }

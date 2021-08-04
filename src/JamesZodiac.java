@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class JamesZodiac {
@@ -119,10 +120,11 @@ public class JamesZodiac {
     }
 
 
-    static void zodiacSign() throws InterruptedException {
-        System.out.println("You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesBirthdayQA.month,JamesBirthdayQA.day));
+    static void zodiacSign() throws InterruptedException, IOException {
+        System.out.println("James: You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesBirthdayQA.month,JamesBirthdayQA.day));
         JamesGame.gameIntro();
         JamesGame.gamePlay();
+        TournamentIntro.allComeTogetherGreetings();
 
     }
 

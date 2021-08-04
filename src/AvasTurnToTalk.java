@@ -2,32 +2,28 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class AvaIntro {
+public class AvasTurnToTalk {
     final static Scanner sc = new Scanner(System.in);
 
-    static void avaGreet() throws InterruptedException{
-        System.out.println("Ava: Hello, and what might your name be?");
+    static void greetAfterJames() throws InterruptedException{
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: Hey, my name is Ava. I am the smarter/funnier sibling.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: Haha Im just kidding... Or am I?");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: I've been told by my creator that questions like that build suspense.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: So please blame him if my lines aren't that witty.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: Anywho where are my manners. I'm sorry what was your name again?");
         System.out.print("> ");
         String userName = sc.next();
-        if (userName.equals("Ava") || userName.equals("ava")){
-            System.out.println("Ava: Omg no way! That is crazy.");
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ava: We already have something in common :)");
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ava: Like my brother I am looking forward to learning more about you humans.");
-
-        } else {
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ava: " + userName + "," + " " + "hmmmm.... I can't say that I know anyone human by that name.");
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ava: Anyway, my brother probably already told you, but my name is Ava.");
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ava: I am a computer generated robot just like my brother.");
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ava: Both of us are looking for a human experience. Since we have no idea what it means to be human.");
-            TimeUnit.SECONDS.sleep(2);
+        if (userName.equals("Ava")){
+            System.out.println("Me too!");
         }
-
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println("Ava: I haven't really met a lot of " + userName + "'s");
+        TimeUnit.SECONDS.sleep(3);
     }
 
     static void birthDayIntro() throws InterruptedException, IOException {
@@ -63,3 +59,4 @@ public class AvaIntro {
         }
     }
 }
+

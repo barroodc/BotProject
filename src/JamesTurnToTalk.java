@@ -1,21 +1,27 @@
 import java.io.IOException;
-import java.sql.Time;
-import java.text.ParseException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class JamesIntro {
+public class JamesTurnToTalk {
     final static Scanner sc = new Scanner(System.in);
-
-    static void greet() throws InterruptedException {
-        System.out.println("James: I know this is awkward. Who wants to talk to their computer right?");
-        TimeUnit.SECONDS.sleep(3);
-        System.out.println("James: Anyway again my name is James");
+    static void greetAfterAva() throws InterruptedException{
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("James: Whats yours?");
+        System.out.println("James: Hey, welcome back!");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Hopefully my sister didn't bore you that much.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Haha Im just kidding. We love to as you humans say, give each other bowl movements");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Or at least thats what I've been told. Anyway Im glad you're back now.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Just in case you forgot, my name is James");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: I'm a little slow memorizing you and your human counterparts names.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Can you remind me of your name please.");
         System.out.print("> ");
         String userName = sc.next();
-        if (userName.equals("James")) {
+        if (userName.equals("James")){
             System.out.println("Me too!");
         }
         TimeUnit.SECONDS.sleep(1);
@@ -47,17 +53,14 @@ public class JamesIntro {
                 JamesBirthdayQA.yearOfBirth();
                 JamesZodiac.zodiacSign();
             }
-            } else if (yesOrNo.equals("No") || yesOrNo.equals("no") || yesOrNo.equals("Not really")){
-                   System.out.println("James: That's more than okay.");
-                   TimeUnit.SECONDS.sleep(2);
-                   System.out.println("James: I do insist on us though playing a quick game of Tic Tac Toe");
-                   TimeUnit.SECONDS.sleep(2);
-                   System.out.println("James: I am so sick of playing my sister. I need new competition.");
-                   TimeUnit.SECONDS.sleep(2);
-                       JamesGame.gameIntro();
-                       JamesGame.gamePlay();
-                       JamesGame.letsTalkToAva();
-              }
+        } else if (yesOrNo.equals("No") || yesOrNo.equals("no") || yesOrNo.equals("Not really")){
+            System.out.println("James: That's more than okay.");
+            System.out.println("James: I do insist on us though playing a quick game of Tic Tac Toe");
+            System.out.println("James: I am so sick of playing my sister. I need new competition.");
+            JamesGame.gameIntro();
+            JamesGame.gamePlay();
+            TournamentIntro.allComeTogetherGreetings();
         }
     }
+}
 

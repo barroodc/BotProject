@@ -30,17 +30,17 @@ public class ChatBot {
     }
 
     static void welcomeMessage() throws InterruptedException, IOException {
-        System.out.println("Welcome and thank you for choosing this interactive experience.");
+        System.out.println("James: Welcome and thank you for choosing this interactive experience.");
         TimeUnit.SECONDS.sleep(3);
-        System.out.println("My name is James. Im a male cyborg and Im interested in getting to know you better.");
+        System.out.println("James: My name is James. Im a male cyborg and Im interested in getting to know you better.");
         TimeUnit.SECONDS.sleep(3);
-        System.out.println("I have a sister named Ava whose a bit younger thats also interested in getting to know you.");
+        System.out.println("James: I have a sister named Ava whose a bit younger thats also interested in getting to know you.");
         TimeUnit.SECONDS.sleep(3);
-        System.out.println("Also I would appreciate if you kept most of your answers in the form yes or no.");
+        System.out.println("James: Also I would appreciate if you kept most of your answers in the form yes or no.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Im still learning the language and my knowledge is still primitive in nature.");
+        System.out.println("James: Im still learning the language and my knowledge is still primitive in nature.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Would you be interested in getting to know me or my sister first?");
+        System.out.println("James: Would you be interested in getting to know me or my sister first?");
         TimeUnit.SECONDS.sleep(3);
         //Add progress bar if user should choose sister.
 
@@ -53,20 +53,21 @@ public class ChatBot {
             answer = sc.next();
 
             if (answer.equals("You") || answer.equals("you") || answer.equals("James") || answer.equals("james")) {
-                System.out.println("Great! I cant wait to get started getting to know you.");
+                System.out.println("James: Great! I cant wait to get started getting to know you.");
                 JamesIntro.greet();
                 JamesIntro.birthdayIntro();
+
                 valid = true;
 
             } else if (answer.equals("Ava") || answer.equals("ava") || answer.equals("Your sister") || answer.equals("your sister")) {
-                System.out.println("Hey, no hard feelings, I'll connect you with her now.");
+                System.out.println("James: Hey, no hard feelings, I'll connect you with her now.");
                 TimeUnit.SECONDS.sleep(4);
                 AvaIntro.avaGreet();
                 AvaIntro.birthDayIntro();
                 valid = true;
                 //Weird that I cant type in "your sister" as another available field.
             } else {
-                System.out.println("Im sorry, can you please type in either my name or my sisters?");
+                System.out.println("James: Im sorry, can you please type in either my name or my sisters?");
             }
         }
 

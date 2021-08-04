@@ -31,7 +31,7 @@ public class JamesGame {
     static ArrayList<Integer> playerPositions = new ArrayList<Integer>();
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
 
-       public static void gamePlay () {
+       public static void gamePlay () throws IOException, InterruptedException {
         // Create a Scanner object attached to the keyboard
         Scanner scan = new Scanner (System.in);
         // Gameboard print
@@ -128,7 +128,7 @@ public class JamesGame {
                 break;
         }
     }
-    public static String checkWinner(){
+    public static String checkWinner() throws IOException, InterruptedException {
         List topRow = Arrays.asList(1, 2, 3);
         List midRow = Arrays.asList(4, 5, 6);
         List botRow = Arrays.asList(7, 8, 9);
@@ -170,10 +170,15 @@ public class JamesGame {
     }
 
     public static void letsTalkToAva() throws InterruptedException, IOException {
+           TimeUnit.SECONDS.sleep(2);
            System.out.println("I truly appreciate you hanging out with me.");
+           TimeUnit.SECONDS.sleep(2);
            System.out.println("I did regretfully promise my sister that she would have a chance to meet you too.");
+           TimeUnit.SECONDS.sleep(2);
            System.out.println("Let me go and get her.");
+           TimeUnit.SECONDS.sleep(2);
            System.out.println("So long for now!");
+           TimeUnit.SECONDS.sleep(2);
            AvaIntro.avaGreet();
            AvaIntro.birthDayIntro();
     }

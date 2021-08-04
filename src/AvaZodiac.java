@@ -120,7 +120,7 @@ public class AvaZodiac {
     }
 
     static void zodiacSign() throws IOException, InterruptedException {
-        System.out.println("You probably already know this but your Zodiac sign is: " + zodiac_sign(AvaBirthdayQA.month,AvaBirthdayQA.day));
+        System.out.println("Ava: You probably already know this but your Zodiac sign is: " + zodiac_sign(AvaBirthdayQA.month,AvaBirthdayQA.day));
         AvaGame.gameOneIntro();
 
     }
