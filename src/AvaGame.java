@@ -77,13 +77,13 @@ public class AvaGame{
                 System.out.println("Sorry for the frowny face. I get super competitive.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("But good game.");
-                ontoTheTournament();
+
             } else if (numberCorrect == randomNum){
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("But I can settle with a tie");
-                ontoTheTournament();
+
             } else {
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Hehehehehe I won! :)");
@@ -91,7 +91,7 @@ public class AvaGame{
                 System.out.println("I am pretty good at that game.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Better luck next time I suppose lol.");
-                ontoTheTournament();
+
             }
         }
     }

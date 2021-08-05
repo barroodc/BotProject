@@ -124,7 +124,7 @@ public class JamesZodiac {
         System.out.println("James: You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesBirthdayQA.month,JamesBirthdayQA.day));
         JamesGame.gameIntro();
         JamesGame.gamePlay();
-        TournamentIntro.allComeTogetherGreetings();
+        JamesGame.letsTalkToAva();
 
     }
 
