@@ -54,18 +54,19 @@ public class ChatBot {
 
             if (answer.equals("You") || answer.equals("you") || answer.equals("James") || answer.equals("james")) {
                 System.out.println("James: Great! I cant wait to get started getting to know you.");
-                JamesIntro.greet();
-                JamesIntro.birthdayIntro();
+                JamesFirst.greetJames();
+                JamesFirst.birthdayIntro();
 
                 valid = true;
 
             } else if (answer.equals("Ava") || answer.equals("ava") || answer.equals("Your sister") || answer.equals("your sister")) {
                 System.out.println("James: Hey, no hard feelings, I'll connect you with her now.");
                 TimeUnit.SECONDS.sleep(4);
-                AvaIntro.avaGreet();
-                AvaIntro.birthDayIntro();
+                AvaFirst.avaGreet();
+                AvaFirst.birthDayIntro();
                 valid = true;
                 //Weird that I cant type in "your sister" as another available field.
+                //This could be my answer for everything to connect the two fields.
             } else {
                 System.out.println("James: Im sorry, can you please type in either my name or my sisters?");
             }

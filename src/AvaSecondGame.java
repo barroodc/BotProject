@@ -1,22 +1,22 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.sql.Time;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-
-public class AvaGame{
+public class AvaSecondGame {
     final static Scanner sc = new Scanner(System.in);
     public static ArrayList<String> list = new ArrayList<>();
     public static ArrayList<String> correctAnswers = new ArrayList<>();
     public static class ShuffleString {
         public static String shuffleWords(String text){
-            List<Character> characters =  text.chars().mapToObj( c -> (char)c).collect(Collectors.toList());
+            List<Character> characters =  text.chars().mapToObj(c -> (char)c).collect(Collectors.toList());
             StringBuilder result = new StringBuilder();
             IntStream.range(0,text.length()).forEach((index) -> {
                 int randomPosition = new Random().nextInt(characters.size());
@@ -54,7 +54,7 @@ public class AvaGame{
                 System.out.println("Unscramble: " + ShuffleString.shuffleWords(getRandomLineFromFile()));
                 System.out.print("Your answer: ");
                 String answer = scanner.next();
-                 correctAnswers.add(ShuffleString.shuffleWords(getRandomLineFromFile()));
+                correctAnswers.add(ShuffleString.shuffleWords(getRandomLineFromFile()));
                 boolean compare = (new Scanner(file).useDelimiter("\\Z").next().contains(answer));
 
                 if (compare){
@@ -70,6 +70,9 @@ public class AvaGame{
 
             System.out.println("Avas number of correct Answers: " + randomNum);
 
+            System.out.println("My Answer: " + list);
+            System.out.println("Correct Answer: " + correctAnswers);
+
             if (numberCorrect > randomNum){
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Omg I cant believe it! You won :(");
@@ -77,13 +80,17 @@ public class AvaGame{
                 System.out.println("Sorry for the frowny face. I get super competitive.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("But good game.");
-
+                TimeUnit.SECONDS.sleep(2);
+                System.out.println("Lets meet back up with James to see how hes doing.");
+                TournamentIntro.allComeTogetherGreetings();
             } else if (numberCorrect == randomNum){
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("But I can settle with a tie");
-
+                TimeUnit.SECONDS.sleep(2);
+                System.out.println("Lets meet up with James to see how hes doing.");
+                TournamentIntro.allComeTogetherGreetings();
             } else {
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Hehehehehe I won! :)");
@@ -91,7 +98,9 @@ public class AvaGame{
                 System.out.println("I am pretty good at that game.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Better luck next time I suppose lol.");
-
+                TimeUnit.SECONDS.sleep(2);
+                System.out.println("Lets meet up with James to see how hes doing.");
+                TournamentIntro.allComeTogetherGreetings();
             }
         }
     }
@@ -113,83 +122,35 @@ public class AvaGame{
         if (answerOne.contains("Yes") || answerOne.contains("yes")) {
             TimeUnit.SECONDS.sleep(1);
             System.out.println("Yay okay so... the game I want to play with you is one of my favorites");
-        } else if (answerOne.contains("No") || answerOne.contains("no")) {
-            System.out.println("That's okay we can do something else!");
-            //add connection here for James and or the tournament.
-        }
-        TimeUnit.SECONDS.sleep(1);
-        System.out.println("So the game is called unscramble the words.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("There will be a total of 30 different words on the screen.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("We are going to try and unscramble as many words as we can");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Whoever unscrambles more wins.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Ready to start?");
-        System.out.print("> ");
-        String answerTwo = sc.next();
-
-        switch (answerTwo){
-            case "Yes":
-            case "yes":
-                System.out.println("Great! lets begin.");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("So the game is called unscramble the words.");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("There will be a total of 30 different words on the screen.");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("We are going to try and unscramble as many words as we can");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("Whoever unscrambles more wins.");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("Ready to start?");
+            System.out.print("> ");
+            String answerTwo = sc.next();
+            if (answerTwo.equals("Yes") || answerTwo.equals("yes")){
+                System.out.println("Great! lets begin");
                 ShuffleString.actualGame();
-                System.out.println("My Answer: " + list);
-                System.out.println("Correct Answer: " + correctAnswers);
-            case "No":
-            case "no":
-                System.out.println("Its okay take your time. When you are ready just type the word ready all lower case below:");
+            } else if (answerTwo.equals("No") || answerTwo.equals("no")){
+                System.out.println("Its okay take your time. When you are ready just type the word ready in all lower case below:");
                 System.out.print("> ");
-                String answerThree = sc.next();
+                String ready = sc.next();
                 ShuffleString.actualGame();
-        }
-    }
-
-    public static void letsTalkToJames() throws InterruptedException, IOException {
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Im having such a good time with you. I hope you are having a good time with me too :)");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Which is why I am experiencing what you humans call sadness right now :(");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("I promised my pain in the butt big brother a chance to get to know you");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("To continue my rein as the superior sibling I need to oblige.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Don't worry, I am not going anywhere.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Once you are done talking with him I'll be there to at least to say goodbye:)");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Tata for now my friend.");
-        TimeUnit.SECONDS.sleep(2);
-        JamesTurnToTalk.greetAfterAva();
-        JamesTurnToTalk.birthdayIntro();
-    }
-
-    public static void ontoTheTournament() throws InterruptedException{
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Word games are my forte.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("My brother on the other hand enjoys strategy based games.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("But we both love completely destroying one another.");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("No matter what the game is");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("I think that's what makes us the most human. Would you agree?");
-
-        System.out.println("> ");
-        String answer = sc.next();
-
-        switch (answer) {
-            case "Yes", "yes" -> System.out.println("Exactly! I think you possess that competitive spirit as well.");
-            case "No", "no" -> {
-                System.out.println("Really? Aweee honestly I thought that brought us closer to being organisms like you.");
-                System.out.println("Oh well.");
             }
         }
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Anywho, lets circle back with my brother to see what he is up to.");
-        TournamentIntro.allComeTogetherGreetings();
+        if (answerOne.contains("No") || answerOne.contains("no")) {
+            System.out.println("That's okay we can do something else!");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("Why don't we try and catch up and see what James is doing?");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("Im sure hes really jealous right now that Im with you and he isn't :).");
+            TournamentIntro.allComeTogetherGreetings();
+        }
     }
 }

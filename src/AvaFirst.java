@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class AvaIntro {
+public class AvaFirst {
     final static Scanner sc = new Scanner(System.in);
 
     static void avaGreet() throws InterruptedException{
@@ -29,29 +29,30 @@ public class AvaIntro {
         }
 
     }
-
     static void birthDayIntro() throws InterruptedException, IOException {
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Ava: So, like my brother, I am absolutely fascinated with zodiac signs.");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Ava: My birthday is 10/17/1997.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Ava: Would it be alright if I asked you what your birthday is?");
+        System.out.println("Ava: Would it be alright if I asked you what your birthday was?");
         TimeUnit.SECONDS.sleep(2);
         System.out.print("> ");
         String answer = sc.next();
         if (answer.equals("Yes") || answer.equals("yes")){
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Ava: Great! I was hoping you were going to say that :) ");
-            AvaBirthdayQA.birthMonth();
-            AvaBirthdayQA.dayOfBirth();
-            AvaBirthdayQA.yearOfBirth();
-            AvaZodiac.zodiacSign();
+            AvaFirstYesToZodiacSign.birthMonth();
+            AvaFirstYesToZodiacSign.dayOfBirth();
+            AvaFirstYesToZodiacSign.yearOfBirth();
+            AvaFirstYesToZodiacSign.AvaFirstZodiac.zodiacSign();
+            AvaFirstGame.gameOneIntro();
+            AvaFirstGame.ShuffleString.actualGame();
         } else if (answer.equals("No") || answer.equals("no")){
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Ava: Aweee its okay I get it.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ava: Its kind of a werid ice breaker anyway to ask.");
+            System.out.println("Ava: Its kind of a weird ice breaker anyway to ask.");
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Ava: Lets play a game instead!");
             TimeUnit.SECONDS.sleep(2);
@@ -59,7 +60,7 @@ public class AvaIntro {
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Ava: There will be 30 words to unscramble. Lets get started!");
             TimeUnit.SECONDS.sleep(1);
-            AvaGame.ShuffleString.actualGame();
+            AvaFirstGame.ShuffleString.actualGame();
         }
     }
 }

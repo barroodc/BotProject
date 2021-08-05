@@ -2,14 +2,13 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class JamesGame {
+public class JamesSecondGame {
+
     final static Scanner sc = new Scanner(System.in);
 
 
     static void gameIntro() throws InterruptedException {
-        System.out.println("Honestly I am so over talking about zodiac signs");
-        TimeUnit.SECONDS.sleep(2);
-        System.out.println("Lets play a quick game of Tic Tac Toe");
+        System.out.println("So lets go ahead and play a quick game of Tic Tac Toe");
         TimeUnit.SECONDS.sleep(2);
 
         System.out.println("Did you need a refresher on how to play?");
@@ -31,7 +30,7 @@ public class JamesGame {
     static ArrayList<Integer> playerPositions = new ArrayList<Integer>();
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
 
-       public static void gamePlay () throws IOException, InterruptedException {
+    public static void gamePlay () throws IOException, InterruptedException {
         // Create a Scanner object attached to the keyboard
         Scanner scan = new Scanner (System.in);
         // Gameboard print
@@ -159,6 +158,7 @@ public class JamesGame {
         }
 
         return "";
+
     }
     public static void printGameBoard (char [][] gameBoard){
         for(char[] row : gameBoard) {
@@ -168,19 +168,4 @@ public class JamesGame {
             System.out.println();
         }
     }
-
-    public static void letsTalkToAva() throws InterruptedException, IOException {
-           TimeUnit.SECONDS.sleep(2);
-           System.out.println("I truly appreciate you hanging out with me.");
-           TimeUnit.SECONDS.sleep(2);
-           System.out.println("I did regretfully promise my sister that she would have a chance to meet you too.");
-           TimeUnit.SECONDS.sleep(2);
-           System.out.println("Let me go and get her.");
-           TimeUnit.SECONDS.sleep(2);
-           System.out.println("So long for now!");
-           TimeUnit.SECONDS.sleep(2);
-           AvaIntro.avaGreet();
-           AvaIntro.birthDayIntro();
-    }
-
 }
