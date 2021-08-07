@@ -46,8 +46,7 @@ public class AvaFirst {
             AvaFirstYesToZodiacSign.dayOfBirth();
             AvaFirstYesToZodiacSign.yearOfBirth();
             AvaFirstYesToZodiacSign.AvaFirstZodiac.zodiacSign();
-            AvaFirstGame.gameOneIntro();
-            AvaFirstGame.ShuffleString.actualGame();
+            AvaFirstGame.avasGameFirst();
         } else if (answer.equals("No") || answer.equals("no")){
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Ava: Aweee its okay I get it.");
@@ -60,7 +59,6 @@ public class AvaFirst {
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Ava: There will be 30 words to unscramble. Lets get started!");
             TimeUnit.SECONDS.sleep(1);
-            AvaFirstGame.ShuffleString.actualGame();
         }
     }
 }

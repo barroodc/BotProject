@@ -160,6 +160,10 @@ public class JamesSecondGame {
         return "";
 
     }
+
+    public static void meetUpWithAva(){
+        System.out.println("James: Hey lets go meet up with Ava to see what she is up to right now.");
+    }
     public static void printGameBoard (char [][] gameBoard){
         for(char[] row : gameBoard) {
             for(char c : row) {

@@ -51,10 +51,10 @@ public class AvaFirstGame {
 
             while (count < limit) {
                 count++;
-                System.out.println("Unscramble: " + AvaSecondGame.ShuffleString.shuffleWords(getRandomLineFromFile()));
+                System.out.println("Unscramble: " + AvaFirstGame.ShuffleString.shuffleWords(getRandomLineFromFile()));
                 System.out.print("Your answer: ");
                 String answer = scanner.next();
-                correctAnswers.add(AvaSecondGame.ShuffleString.shuffleWords(getRandomLineFromFile()));
+                correctAnswers.add(AvaFirstGame.ShuffleString.shuffleWords(getRandomLineFromFile()));
                 boolean compare = (new Scanner(file).useDelimiter("\\Z").next().contains(answer));
 
                 if (compare){
@@ -108,7 +108,7 @@ public class AvaFirstGame {
 
 
     //word unscramble
-    static void gameOneIntro() throws IOException, InterruptedException {
+    static void avasGameFirst() throws IOException, InterruptedException {
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Hmmmm... so we talked about our Zodiac signs");
         TimeUnit.SECONDS.sleep(2);
@@ -136,12 +136,12 @@ public class AvaFirstGame {
             String answerTwo = sc.next();
             if (answerTwo.equals("Yes") || answerTwo.equals("yes")){
                 System.out.println("Great! lets begin");
-                AvaSecondGame.ShuffleString.actualGame();
+                AvaFirstGame.ShuffleString.actualGame();
             } else if (answerTwo.equals("No") || answerTwo.equals("no")){
                 System.out.println("Its okay take your time. When you are ready just type the word ready in all lower case below:");
                 System.out.print("> ");
                 String ready = sc.next();
-                AvaSecondGame.ShuffleString.actualGame();
+                AvaFirstGame.ShuffleString.actualGame();
             }
         }else if (answerOne.contains("No") || answerOne.contains("no")) {
             System.out.println("That's okay we can do something else!");

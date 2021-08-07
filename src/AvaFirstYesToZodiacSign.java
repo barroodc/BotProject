@@ -198,8 +198,6 @@ public class AvaFirstYesToZodiacSign {
 
         static void zodiacSign() throws IOException, InterruptedException {
             System.out.println("Ava: You probably already know this but your Zodiac sign is: " + zodiac_sign(AvaFirstYesToZodiacSign.month, AvaFirstYesToZodiacSign.day));
-            AvaFirstGame.gameOneIntro();
-
         }
     }
 }

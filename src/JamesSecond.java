@@ -52,12 +52,14 @@ public class JamesSecond {
             JamesZodiacSecond.zodiacSign();
             JamesSecondGame.gameIntro();
             JamesSecondGame.gamePlay();
+            JamesSecondGame.meetUpWithAva();
             TournamentIntro.allComeTogetherGreetings();
         } else if (yesOrNo.equals("No") || yesOrNo.equals("no")){
             System.out.println("James: Hey no worries man. I do insist however that we play a game.");
             TimeUnit.SECONDS.sleep(2);
             JamesSecondGame.gameIntro();
             JamesSecondGame.gamePlay();
+            JamesSecondGame.meetUpWithAva();
             TournamentIntro.allComeTogetherGreetings();
         }
     }
