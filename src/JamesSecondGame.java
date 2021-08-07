@@ -161,8 +161,9 @@ public class JamesSecondGame {
 
     }
 
-    public static void meetUpWithAva(){
+    public static void meetUpWithAva() throws InterruptedException {
         System.out.println("James: Hey lets go meet up with Ava to see what she is up to right now.");
+        TimeUnit.SECONDS.sleep(2);
     }
     public static void printGameBoard (char [][] gameBoard){
         for(char[] row : gameBoard) {

@@ -59,6 +59,7 @@ public class AvaFirst {
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Ava: There will be 30 words to unscramble. Lets get started!");
             TimeUnit.SECONDS.sleep(1);
+            AvaFirstGame.ShuffleString.actualGame();
         }
     }
 }

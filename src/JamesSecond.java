@@ -49,7 +49,6 @@ public class JamesSecond {
             JamesSecondYesToZodiacSign.monthOfBirth();
             JamesSecondYesToZodiacSign.dayOfBirth();
             JamesSecondYesToZodiacSign.yearOfBirth();
-            JamesZodiacSecond.zodiacSign();
             JamesSecondGame.gameIntro();
             JamesSecondGame.gamePlay();
             JamesSecondGame.meetUpWithAva();

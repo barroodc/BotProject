@@ -82,7 +82,8 @@ public class AvaFirstGame {
                 System.out.println("Ava: But good game.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Lets meet back up with James to see how hes doing.");
-                TournamentIntro.allComeTogetherGreetings();
+                JamesSecond.greetAfterAva();
+                JamesSecond.birthdayIntro();
             } else if (numberCorrect == randomNum){
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Ava: Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
@@ -90,7 +91,8 @@ public class AvaFirstGame {
                 System.out.println("Ava: But I can settle with a tie");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Lets meet up with James to see how hes doing.");
-                TournamentIntro.allComeTogetherGreetings();
+                JamesSecond.greetAfterAva();
+                JamesSecond.birthdayIntro();
             } else {
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("Ava: Hehehehehe I won! :)");
@@ -100,7 +102,8 @@ public class AvaFirstGame {
                 System.out.println("Ava: Better luck next time I suppose lol.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Lets meet up with James to see how hes doing.");
-                TournamentIntro.allComeTogetherGreetings();
+                JamesSecond.greetAfterAva();
+                JamesSecond.birthdayIntro();
             }
         }
     }

@@ -49,13 +49,16 @@ public class JamesSecondYesToZodiacSign {
             TimeUnit.SECONDS.sleep(2);
             System.out.println("James: Sorry, I hope that didn't scare you off. I just found it kind of interesting.");
             TimeUnit.SECONDS.sleep(2);
+            JamesZodiacSecond.zodiacSign();
         } else if ((month.equals("May") || month.equals("may")) && day != 27 && year == 1994){
             System.out.println("James: We were born in the same month and year!");
+            JamesZodiacSecond.zodiacSign();
         } else if (((!month.equals("May") || !month.equals("may")) && (day != 27 && year == 1994))){
             System.out.println("James: At least we you were born in the same year. Thats nothing to sneeze at.");
             TimeUnit.SECONDS.sleep(2);
             System.out.println("James: You're my COMPUpeer. Sorry that was cheesy.");
             TimeUnit.SECONDS.sleep(2);
+            JamesZodiacSecond.zodiacSign();
         } else {
             System.out.println("James: It looks like we don't have any calendar related similarities.");
             TimeUnit.SECONDS.sleep(2);
@@ -63,6 +66,7 @@ public class JamesSecondYesToZodiacSign {
             TimeUnit.SECONDS.sleep(3);
             System.out.println("James: I just find it interesting if someone else has that in common with me.");
             TimeUnit.SECONDS.sleep(2);
+            JamesZodiacSecond.zodiacSign();
         }
 
         if (((month.equals("October") || month.equals("october")) && day == 17 && year == 1997)){
@@ -191,7 +195,7 @@ class JamesZodiacSecond{
     }
 
 
-    static void zodiacSign() {
-        System.out.println("James: You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesYesToZodiac.month,JamesYesToZodiac.day));
+       public static void zodiacSign() {
+        System.out.println("James: You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesSecondYesToZodiacSign.month,JamesSecondYesToZodiacSign.day));
     }
 }
