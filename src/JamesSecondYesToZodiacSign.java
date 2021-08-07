@@ -9,66 +9,66 @@ public class JamesSecondYesToZodiacSign {
     public static int year;
 
     static void monthOfBirth() throws InterruptedException{
-        System.out.println("What is the name of the month you were born in?");
+        System.out.println("James: What is the name of the month you were born in?");
         TimeUnit.SECONDS.sleep(2);
         System.out.print("> "); month = sc.next();
         TimeUnit.SECONDS.sleep(1);
         if (month.equals("May") || month.equals("may")){
-            System.out.println("Awesome we were born in the same month!");
+            System.out.println("James: Awesome we were born in the same month!");
         } else if (month.equals("October") || month.equals("october")) {
-            System.out.println("You have the same birth month as my younger sister.");
+            System.out.println("James: You have the same birth month as my younger sister.");
             TimeUnit.SECONDS.sleep(2);
         } else {
-            System.out.println("Darn, not the same month but maybe we'll be the same day or even year?");
+            System.out.println("James: Darn, not the same month but maybe we'll be the same day or even year?");
             TimeUnit.SECONDS.sleep(2);
         }
     }
     static void dayOfBirth() throws InterruptedException{
-        System.out.println("What day were you born on?");
+        System.out.println("James: What day were you born on?");
         TimeUnit.SECONDS.sleep(2);
         System.out.print("> "); day = sc.nextInt();
         TimeUnit.SECONDS.sleep(1);
         if ((month.equals("May") || month.equals("may")) && day == 27){
-            System.out.println("2/3 we are practically twins. Minus the hardware and software.");
+            System.out.println("James: 2/3 we are practically twins. Minus the hardware and software.");
         }  else if ((month.equals("May") || month.equals("may") && day != 27)){
-            System.out.println("Not the same day but at least we have the same month!");
+            System.out.println("James: Not the same day but at least we have the same month!");
         } else if (!month.equals("May") || !month.equals("may") && day != 27){
-            System.out.println("Strike two. I thought we might have had at least the same day.");
-            System.out.println("Possibly the same year?");
+            System.out.println("James: Strike two. I thought we might have had at least the same day.");
+            System.out.println("James: Possibly the same year?");
         }
     }
     static void yearOfBirth() throws InterruptedException {
-        System.out.println("What year were you born in?");
+        System.out.println("James: What year were you born in?");
         TimeUnit.SECONDS.sleep(2);
         System.out.print("> "); year = sc.nextInt();
         TimeUnit.SECONDS.sleep(2);
         if (((month.equals("May") || month.equals("may")) && day == 27 && year == 1994)){
-            System.out.println("If I was human I would say that we were separated at birth.");
+            System.out.println("James: If I was human I would say that we were separated at birth.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("The odds of us meeting must mean something.");
+            System.out.println("James: The odds of us meeting must mean something.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Sorry, I hope that didn't scare you off. I just found it kind of interesting.");
+            System.out.println("James: Sorry, I hope that didn't scare you off. I just found it kind of interesting.");
             TimeUnit.SECONDS.sleep(2);
         } else if ((month.equals("May") || month.equals("may")) && day != 27 && year == 1994){
-            System.out.println("We were born in the same month and year!");
+            System.out.println("James: We were born in the same month and year!");
         } else if (((!month.equals("May") || !month.equals("may")) && (day != 27 && year == 1994))){
-            System.out.println("At least we you were born in the same year. Thats nothing to sneeze at.");
+            System.out.println("James: At least we you were born in the same year. Thats nothing to sneeze at.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("You're my COMPUpeer. Sorry that was cheesy.");
+            System.out.println("James: You're my COMPUpeer. Sorry that was cheesy.");
             TimeUnit.SECONDS.sleep(2);
         } else {
-            System.out.println("It looks like we don't have any calendar related similarities.");
+            System.out.println("James: It looks like we don't have any calendar related similarities.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Its not the most important thing in the world to me by any means of the imagination.");
+            System.out.println("James: Its not the most important thing in the world to me by any means of the imagination.");
             TimeUnit.SECONDS.sleep(3);
-            System.out.println("I just find it interesting if someone else has that in common with me.");
+            System.out.println("James: I just find it interesting if someone else has that in common with me.");
             TimeUnit.SECONDS.sleep(2);
         }
 
         if (((month.equals("October") || month.equals("october")) && day == 17 && year == 1997)){
-            System.out.println("You and my sister are literally twins.");
+            System.out.println("James: You and my sister are literally twins.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("She can be a pain in the asS. Hopefully you arent that way lol.");
+            System.out.println("James: She can be a pain in the asS. Hopefully you arent that way lol.");
         }
     }
 }
@@ -192,6 +192,6 @@ class JamesZodiacSecond{
 
 
     static void zodiacSign() {
-        System.out.println("You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesYesToZodiac.month,JamesYesToZodiac.day));
+        System.out.println("James: You probably already know this but your Zodiac sign is: " + zodiac_sign(JamesYesToZodiac.month,JamesYesToZodiac.day));
     }
 }

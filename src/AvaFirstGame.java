@@ -75,31 +75,31 @@ public class AvaFirstGame {
 
             if (numberCorrect > randomNum){
                 TimeUnit.SECONDS.sleep(1);
-                System.out.println("Omg I cant believe it! You won :(");
+                System.out.println("Ava: Omg I cant believe it! You won :(");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Sorry for the frowny face. I get super competitive.");
+                System.out.println("Ava: Sorry for the frowny face. I get super competitive.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("But good game.");
+                System.out.println("Ava: But good game.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Lets meet back up with James to see how hes doing.");
+                System.out.println("Ava: Lets meet back up with James to see how hes doing.");
                 TournamentIntro.allComeTogetherGreetings();
             } else if (numberCorrect == randomNum){
                 TimeUnit.SECONDS.sleep(1);
-                System.out.println("Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
+                System.out.println("Ava: Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("But I can settle with a tie");
+                System.out.println("Ava: But I can settle with a tie");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Lets meet up with James to see how hes doing.");
+                System.out.println("Ava: Lets meet up with James to see how hes doing.");
                 TournamentIntro.allComeTogetherGreetings();
             } else {
                 TimeUnit.SECONDS.sleep(1);
-                System.out.println("Hehehehehe I won! :)");
+                System.out.println("Ava: Hehehehehe I won! :)");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("I am pretty good at that game.");
+                System.out.println("Ava: I am pretty good at that game.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Better luck next time I suppose lol.");
+                System.out.println("Ava: Better luck next time I suppose lol.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Lets meet up with James to see how hes doing.");
+                System.out.println("Ava: Lets meet up with James to see how hes doing.");
                 TournamentIntro.allComeTogetherGreetings();
             }
         }

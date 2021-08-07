@@ -32,17 +32,17 @@ public class JamesSecond {
     static void birthdayIntro() throws InterruptedException, IOException {
         System.out.println("James: Im a Gemini. I have no idea if you care about that kind of thing. Do you?");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Actually on second thought I know Ava kind of asked you about that already.");
+        System.out.println("James: Actually on second thought I know Ava kind of asked you about that already.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Its up to you if you want to be pestered by me with those questions. She could give me that data later.");
+        System.out.println("James: Its up to you if you want to be pestered by me with those questions. She could give me that data later.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("If you guys discussed it.");
+        System.out.println("James: If you guys discussed it.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Just simply type yes or no if you want to talk about it.");
+        System.out.println("James: Just simply type yes or no if you want to talk about it.");
         System.out.print("> ");
         String yesOrNo = sc.next();
         if (yesOrNo.equals("yes") || yesOrNo.equals("Yes")) {
-            System.out.println("Awesome sauce! I was hoping you were going to say that.");
+            System.out.println("James: Awesome sauce! I was hoping you were going to say that.");
             TimeUnit.SECONDS.sleep(2);
             System.out.println("James: So my birthday is 05/27/1994");
             TimeUnit.SECONDS.sleep(2);;
@@ -54,7 +54,7 @@ public class JamesSecond {
             JamesSecondGame.gamePlay();
             TournamentIntro.allComeTogetherGreetings();
         } else if (yesOrNo.equals("No") || yesOrNo.equals("no")){
-            System.out.println("Hey no worries man. I do insist however that we play a game.");
+            System.out.println("James: Hey no worries man. I do insist however that we play a game.");
             TimeUnit.SECONDS.sleep(2);
             JamesSecondGame.gameIntro();
             JamesSecondGame.gamePlay();

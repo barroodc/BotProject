@@ -8,73 +8,73 @@ public class AvaFirstYesToZodiacSign {
     public static int day;
     public static int year;
     static void birthMonth() throws InterruptedException{
-        System.out.println("What is the name of the month you were born in?");
+        System.out.println("Ava: What is the name of the month you were born in?");
         TimeUnit.SECONDS.sleep(2);
         System.out.print("> "); month = sc.next();
         ChatBot.month = month;
         TimeUnit.SECONDS.sleep(1);
         if (month.equals("October") || month.equals("october")){
-            System.out.println("Awesome we were born in the same month!");
+            System.out.println("Ava: Awesome we were born in the same month!");
         } else if (month.equals("May") || month.equals("may")){
-            System.out.println("That's the same month as my older brother!");
+            System.out.println("Ava: That's the same month as my older brother!");
             TimeUnit.SECONDS.sleep(2);
         } else {
-            System.out.println("Darn, not the same month but maybe we'll be the same day or even year?");
+            System.out.println("Ava: Darn, not the same month but maybe we'll be the same day or even year?");
             TimeUnit.SECONDS.sleep(2);
         }
     }
     static void dayOfBirth() throws InterruptedException{
-        System.out.println("What day were you born on?");
+        System.out.println("Ava: What day were you born on?");
         TimeUnit.SECONDS.sleep(2);
         System.out.print("> "); day = sc.nextInt();
         ChatBot.day = day;
         TimeUnit.SECONDS.sleep(1);
         if ((month.equals("October") || month.equals("october")) && day == 17){
-            System.out.println("Same month and same day. I can't believe the coincidence!");
+            System.out.println("Ava: Same month and same day. I can't believe the coincidence!");
         }  else if (month.equals("October") || month.equals("october") && day !=17 ){
-            System.out.println("Not the same day but at least we were born in the same month :)");
+            System.out.println("Ava: Not the same day but at least we were born in the same month :)");
         } else if ((!month.equals("October") || !month.equals("October")) && day != 27){
-            System.out.println("Not the same month or day huh :(");
+            System.out.println("Ava: Not the same month or day huh :(");
         }
 
         if ((month.equals("May") || month.equals("may")) && day == 27){
-            System.out.println("You were born on the same day and month as my brother!");
+            System.out.println("Ava: You were born on the same day and month as my brother!");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("That means you have the same zodiac sign!");
+            System.out.println("Ava: That means you have the same zodiac sign!");
         } else if ((month.equals("May") || month.equals("may")) && day != 27){
-            System.out.println("You were born in the same month as my older brother!");
+            System.out.println("Ava: You were born in the same month as my older brother!");
         }
     }
     static void yearOfBirth() throws InterruptedException{
-        System.out.println("What year were you born in?");
+        System.out.println("Ava: What year were you born in?");
         TimeUnit.SECONDS.sleep(2);
         System.out.print("> "); year = sc.nextInt();
         TimeUnit.SECONDS.sleep(2);
         if ((month.equals("October") || month.equals("october")) && day == 17 && year == 1997){
-            System.out.println("Thats so cool! We are literally siblings from another motherboard. :) ");
+            System.out.println("Ava: Thats so cool! We are literally siblings from another motherboard. :) ");
             TimeUnit.SECONDS.sleep(2);
         } else if ((month.equals("October") || month.equals("october")) && day != 17 && year == 1997){
-            System.out.println("We were born in the same month and year!");
-            System.out.println("And as my brother would say we are Compupeers. :)");
+            System.out.println("Ava: We were born in the same month and year!");
+            System.out.println("Ava: And as my brother would say we are Compupeers. :)");
         } else if ((!month.equals("October") || !month.equals("october")) && day != 17 && year == 1997){
-            System.out.println("Well as my brother would say we are Compupeers. :)");
+            System.out.println("Ava: Well as my brother would say we are Compupeers. :)");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("I know that joke was bad. Unfortunately my brother and I get our humor");
-            System.out.println("from the same motherboard.");
+            System.out.println("Ava: I know that joke was bad. Unfortunately my brother and I get our humor");
+            System.out.println("Ava: from the same motherboard.");
             TimeUnit.SECONDS.sleep(2);
         } else {
-            System.out.println("It looks like we don't have any calendar related similarities.");
+            System.out.println("Ava: It looks like we don't have any calendar related similarities.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Its not the most important thing in the world to me by any means of the imagination.");
+            System.out.println("Ava: Its not the most important thing in the world to me by any means of the imagination.");
             TimeUnit.SECONDS.sleep(3);
-            System.out.println("I just find it interesting if someone else has that in common with me.");
+            System.out.println("Ava: I just find it interesting if someone else has that in common with me.");
             TimeUnit.SECONDS.sleep(2);
         }
 
         if ((month.equals("May") || month.equals("may")) && day == 27 && year == 1994){
-            System.out.println("Wow that's amazing!");
+            System.out.println("Ava: Wow that's amazing!");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("You and my brother have the exact same birthday!");
+            System.out.println("Ava: You and my brother have the exact same birthday!");
         }
     }
     static class AvaFirstZodiac {

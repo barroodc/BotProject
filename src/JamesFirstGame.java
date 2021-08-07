@@ -7,21 +7,21 @@ public class JamesFirstGame {
 
 
     static void gameIntro() throws InterruptedException {
-        System.out.println("So lets go ahead and play a quick game of Tic Tac Toe");
+        System.out.println("James: So lets go ahead and play a quick game of Tic Tac Toe");
         TimeUnit.SECONDS.sleep(2);
 
-        System.out.println("Did you need a refresher on how to play?");
+        System.out.println("James: Did you need a refresher on how to play?");
         System.out.print("> ");
         String answer = sc.next();
 
         if (answer.equals("Yes") || answer.equals("yes")){
-            System.out.println("The rules are very simple.");
-            System.out.println("The object of the game is to try and get 3 or more x's  or o's in a row");
-            System.out.println("Whoever succeeds at this wins");
-            System.out.println("We could also both fail and it could end in a tie");
-            System.out.println("Alright enough talking, lets play some Tic Tac Toe");
+            System.out.println("James: The rules are very simple.");
+            System.out.println("James: The object of the game is to try and get 3 or more x's  or o's in a row");
+            System.out.println("James: Whoever succeeds at this wins");
+            System.out.println("James: We could also both fail and it could end in a tie");
+            System.out.println("James: Alright enough talking, lets play some Tic Tac Toe");
         } else if (answer.equals("No") || answer.equals("no")){
-            System.out.println("Great! Prepare to lose lol");
+            System.out.println("James: Great! Prepare to lose lol");
         }
 
     }
@@ -47,11 +47,11 @@ public class JamesFirstGame {
             System.out.println("Enter your placement (1-9):");
             int playerPos = scan.nextInt();
             while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions) || cpuPositions.contains(playerPos)){
-                System.out.println("Position taken! Enter another position:");
+                System.out.println("James: Position taken! Enter another position:");
                 playerPos = scan.nextInt();
                 //Prevent user from printing on top of CPU
                 while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)){
-                    System.out.println("Position taken! Enter another position:");
+                    System.out.println("James: Position taken! Enter another position:");
                     playerPos= scan.nextInt();
                 }
             }
@@ -148,11 +148,11 @@ public class JamesFirstGame {
 
         for(List l : winning){
             if(playerPositions.containsAll(l)){
-                return "You won? :( I cant believe this. Well in the end I did want a challenge. Good game.";
+                return "James: You won? :( I cant believe this. Well in the end I did want a challenge. Good game.";
             } else if(cpuPositions.containsAll(l)){
-                return "Heheheh I knew I would win :). You did put up a good fight though. Good game!";
+                return "James: Heheheh I knew I would win :). You did put up a good fight though. Good game!";
             } else if(playerPositions.size() + cpuPositions.size() == 9){
-                return "Not the outcome that I was expecting.";
+                return "James: Not the outcome that I was expecting.";
             }
         }
 
@@ -170,13 +170,13 @@ public class JamesFirstGame {
 
     public static void letsTalkToAva() throws InterruptedException {
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("I truly appreciate you hanging out with me.");
+        System.out.println("James: I truly appreciate you hanging out with me.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("I did regretfully promise my sister that she would have a chance to meet you too.");
+        System.out.println("James: I did regretfully promise my sister that she would have a chance to meet you too.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Let me go and get her.");
+        System.out.println("James: Let me go and get her.");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("So long for now!");
+        System.out.println("James: So long for now!");
         TimeUnit.SECONDS.sleep(2);
     }
 }

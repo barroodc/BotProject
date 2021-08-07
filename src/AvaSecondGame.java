@@ -75,31 +75,31 @@ public class AvaSecondGame {
 
             if (numberCorrect > randomNum){
                 TimeUnit.SECONDS.sleep(1);
-                System.out.println("Omg I cant believe it! You won :(");
+                System.out.println("Ava: Omg I cant believe it! You won :(");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Sorry for the frowny face. I get super competitive.");
+                System.out.println("Ava: Sorry for the frowny face. I get super competitive.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("But good game.");
+                System.out.println("Ava: But good game.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Lets meet back up with James to see how hes doing.");
+                System.out.println("Ava: Lets meet back up with James to see how hes doing.");
                 TournamentIntro.allComeTogetherGreetings();
             } else if (numberCorrect == randomNum){
                 TimeUnit.SECONDS.sleep(1);
-                System.out.println("Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
+                System.out.println("Ava: Hey a tie isn't bad. I kinda wanted to win. Not going to lie");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("But I can settle with a tie");
+                System.out.println("Ava: But I can settle with a tie");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Lets meet up with James to see how hes doing.");
+                System.out.println("Ava: Lets meet up with James to see how hes doing.");
                 TournamentIntro.allComeTogetherGreetings();
             } else {
                 TimeUnit.SECONDS.sleep(1);
-                System.out.println("Hehehehehe I won! :)");
+                System.out.println("Ava: Hehehehehe I won! :)");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("I am pretty good at that game.");
+                System.out.println("Ava: I am pretty good at that game.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Better luck next time I suppose lol.");
+                System.out.println("Ava: Better luck next time I suppose lol.");
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println("Lets meet up with James to see how hes doing.");
+                System.out.println("Ava: Lets meet up with James to see how hes doing.");
                 TournamentIntro.allComeTogetherGreetings();
             }
         }
@@ -110,46 +110,46 @@ public class AvaSecondGame {
     //word unscramble
     static void gameOneIntro() throws IOException, InterruptedException {
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Hmmmm... so we talked about our Zodiac signs");
+        System.out.println("Ava: Hmmmm... so we talked about our Zodiac signs");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("OOO OOooo oo ha forgive my excitement but would you want to play a game with me? :)");
+        System.out.println("Ava: OOO OOooo oo ha forgive my excitement but would you want to play a game with me? :)");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("If not its okay we can always do something else.");
+        System.out.println("Ava: If not its okay we can always do something else.");
         TimeUnit.SECONDS.sleep(2);
         System.out.print(">");
         String answerOne = sc.next();
 
         if (answerOne.contains("Yes") || answerOne.contains("yes")) {
             TimeUnit.SECONDS.sleep(1);
-            System.out.println("Yay okay so... the game I want to play with you is one of my favorites");
+            System.out.println("Ava: Yay okay so... the game I want to play with you is one of my favorites");
             TimeUnit.SECONDS.sleep(1);
-            System.out.println("So the game is called unscramble the words.");
+            System.out.println("Ava: So the game is called unscramble the words.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("There will be a total of 30 different words on the screen.");
+            System.out.println("Ava: There will be a total of 30 different words on the screen.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("We are going to try and unscramble as many words as we can");
+            System.out.println("Ava: We are going to try and unscramble as many words as we can");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Whoever unscrambles more wins.");
+            System.out.println("Ava: Whoever unscrambles more wins.");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Ready to start?");
+            System.out.println("Ava: Ready to start?");
             System.out.print("> ");
             String answerTwo = sc.next();
             if (answerTwo.equals("Yes") || answerTwo.equals("yes")){
-                System.out.println("Great! lets begin");
+                System.out.println("Ava: Great! lets begin");
                 ShuffleString.actualGame();
             } else if (answerTwo.equals("No") || answerTwo.equals("no")){
-                System.out.println("Its okay take your time. When you are ready just type the word ready in all lower case below:");
+                System.out.println("Ava: Its okay take your time. When you are ready just type the word ready in all lower case below:");
                 System.out.print("> ");
                 String ready = sc.next();
                 ShuffleString.actualGame();
             }
         }
         if (answerOne.contains("No") || answerOne.contains("no")) {
-            System.out.println("That's okay we can do something else!");
+            System.out.println("Ava: That's okay we can do something else!");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Why don't we try and catch up and see what James is doing?");
+            System.out.println("Ava: Why don't we try and catch up and see what James is doing?");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Im sure hes really jealous right now that Im with you and he isn't :).");
+            System.out.println("Ava: Im sure hes really jealous right now that Im with you and he isn't :).");
             TournamentIntro.allComeTogetherGreetings();
         }
     }
