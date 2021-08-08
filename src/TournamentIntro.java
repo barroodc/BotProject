@@ -3,10 +3,6 @@ import java.util.concurrent.TimeUnit;
 
 public class TournamentIntro {
     final static Scanner sc = new Scanner(System.in);
-    //You have a limited time to figure out who the killer is in the story.
-    //Given all of the clues you have to determine who it is.
-    //It could be one of us or it could be the random group that we join.
-    //Escape room type plot
 
     static void allComeTogetherGreetings() throws InterruptedException {
         System.out.println("James: Hey sis");
@@ -26,6 +22,7 @@ public class TournamentIntro {
 
         if (yesOrNo.equals("yes") || yesOrNo.equals("Yes")){
             System.out.println("Ava: That's aweomse!");
+
         } else if (yesOrNo.equals("no") || yesOrNo.equals("No")){
             System.out.println("Ava: No worries at all my guy.");
         }
