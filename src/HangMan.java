@@ -13,11 +13,28 @@ import java.util.stream.IntStream;
 
 public class HangMan {
 
+    //longest word is 10 letters fluffiness
+    File file = new File("/Users/christopher/Desktop/Hangman.txt");
+    Scanner words = new Scanner(file);
     final static Scanner sc = new Scanner(System.in);
+    private static String asterisk;
+    private static int count = 0;
 
-        public static void hangManNoMistakes() throws IOException {
+    static {
+        try {
+            asterisk = new String(new char[getRandomLineFromFile().length()]).replace("\0", "*");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public HangMan() throws FileNotFoundException {
+    }
+
+    public static void hangManNoMistakes() throws IOException {
             System.out.println("|----_----");
             System.out.println("|    |");
+            System.out.println("|");
             System.out.println("|");
             System.out.println("|");
             System.out.println("|");
@@ -41,19 +58,47 @@ public class HangMan {
 
         public static void hangManOneMistake() {
 
-            String top = ("|----_----");
-            String nooseLink1 = ("|    |");
-            System.out.println("|");
-            System.out.println("|");
+            System.out.println("|----_----");
+            System.out.println("|    |");
+            System.out.println("|   ( )");
+            System.out.println("|    ");
             System.out.println("|");
             System.out.println("|__________");
 
         }
 
+        public static void hangRule(String guess) throws IOException {
+            String newAsterisk = "";
+            for (int i = 0; i < getRandomLineFromFile().length(); i++){
+                if (getRandomLineFromFile().charAt(i) == guess.charAt(0)){
+                   newAsterisk += guess.charAt(0);
+                } else if (asterisk.charAt(i) != '*') newAsterisk += getRandomLineFromFile().charAt(i);
+                else {
+                    newAsterisk += "*";
+                }
+            }
+            if (asterisk.equals(newAsterisk)){
+                count++;
+                hangManNoMistakes();
+            } else {
+                asterisk = newAsterisk;
+            }
+
+            if (asterisk.equals(getRandomLineFromFile())){
+                System.out.println("Awesome! The word is " + getRandomLineFromFile());
+            }
+        }
+
 
         public static void main(String[] args) throws IOException {
             hangManNoMistakes();
-            System.out.println(getRandomLineFromFile());
+            while (count < 10 && asterisk.contains("*")){
+                System.out.println("Guess any letter in the word");
+                System.out.println(asterisk);
+                String guess = sc.next();
+                hangRule(guess);
+            }
+            sc.close();
         }
     }
 
