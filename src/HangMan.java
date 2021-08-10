@@ -28,7 +28,17 @@ public class HangMan {
 
         if (players.equals("Yes") || players.equals("yes")){
             System.out.println("Great lets get started!");
+        } else{
+            System.out.println("James: I guess Ava and I will have to rock paper scissor shoot over it.");
         }
+
+        String[] rockPaperScissor = {"Rock","Paper","Scissor"};
+
+        Random rand = new Random();
+
+        System.out.println("Ready? Rock, Paper, Scissor, Shoot!");
+
+        System.out.println(rockPaperScissor[rand.nextInt(rockPaperScissor.length)]);
 
     }
 
@@ -53,7 +63,7 @@ public class HangMan {
         }
 
         if (numberIncorrect >=2){
-            System.out.println();
+            System.out.println("|");
         }
     }
 
