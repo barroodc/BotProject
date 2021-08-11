@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HangMan {
 
+
     private static void introToHangman() throws IOException, InterruptedException {
 
         File file = new File("/Users/christopher/Desktop/Hangman.txt");
@@ -29,7 +30,7 @@ public class HangMan {
         if (players.equals("Yes") || players.equals("yes")){
             System.out.println("Great lets get started!");
             userGoesFirst();
-
+            System.exit(0);
         } else{
             System.out.println("James: I guess Ava and I will have to rock paper scissor shoot over it.");
         }
@@ -133,62 +134,62 @@ public class HangMan {
         while (scanner.hasNext()) {
             words.add(scanner.nextLine());
         }
-        //Create a situation that includes yes or no to the intro.
-        //If you selected yes we can do User, then James then Ava
-        //If you selected no we can do Ava, James then User.
+        String asterisk = new String(new char[words.size()]).replace("\0", "*");
+        int numberIncorrect = 0;
+
+        HangManStructure.beginningStructure();
 
         System.out.println("Please guess a letter");
         Scanner keyboard = new Scanner(System.in);
         String letterGuess = keyboard.nextLine();
 
+        if (!words.contains(letterGuess)){
+            ++numberIncorrect;
+        }
+        if (numberIncorrect == 1){
+           HangManStructure.oneIncorrectAnswer();
+        }
+
+        if (!words.contains(letterGuess)){
+            ++numberIncorrect;
+        }
+        if (numberIncorrect == 2){
+            HangManStructure.twoIncorrectAnswers();
+        }
+
+        if (!words.contains(letterGuess)){
+            ++numberIncorrect;
+        }
+        if (numberIncorrect == 3){
+            HangManStructure.threeIncorrectAnswers();
+        }
+
+        if (!words.contains(letterGuess)){
+            ++numberIncorrect;
+        }
+
+        if (numberIncorrect == 4){
+            HangManStructure.fourIncorrectAnswers();
+        }
+
+        if (!words.contains(letterGuess)){
+            ++numberIncorrect;
+        }
+        if (numberIncorrect == 5){
+            HangManStructure.fiveIncorrectAnswers();
+        }
+
+        if (!words.contains(letterGuess)){
+            ++numberIncorrect;
+        }
+        if(numberIncorrect == 6){
+            HangManStructure.sixIncorrectAnswers();
+        }
     }
 
-    private static void hangingOut(Integer numberIncorrect){
-        System.out.println("|----_----");
-        System.out.println("|    |");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|__________");
-
-        System.out.println(" -------");
-        System.out.println(" |     |");
-        if (numberIncorrect >= 1) {
-            System.out.println(" O");
-        }
-
-        if (numberIncorrect >= 2) {
-            System.out.print("\\ ");
-            if (numberIncorrect >= 3) {
-                System.out.println("/");
-            }
-            else {
-                System.out.println("");
-            }
-        }
-
-        if (numberIncorrect >= 4) {
-            System.out.println(" |");
-        }
-
-        if (numberIncorrect >= 5) {
-            System.out.print("/ ");
-            if (numberIncorrect >= 6) {
-                System.out.println("\\");
-            }
-            else {
-                System.out.println("");
-            }
-        }
-        System.out.println("");
-        System.out.println("");
-
-    }
 
     public static void main(String[] args) throws IOException, InterruptedException{
         introToHangman();
-        userGoesFirst();
     }
 }
 
