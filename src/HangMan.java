@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 
 public class HangMan {
 
+    static int numberIncorrect = 0;
+
 
     private static void introToHangman() throws IOException, InterruptedException {
 
@@ -127,63 +129,98 @@ public class HangMan {
         }
     }
 
+    public static void numberIncorrect(){
+        if (numberIncorrect == 1){
+            HangManStructure.oneIncorrectAnswer();
+        } else if (numberIncorrect == 2){
+            HangManStructure.twoIncorrectAnswers();
+        } else if (numberIncorrect == 3){
+            HangManStructure.threeIncorrectAnswers();
+        } else if (numberIncorrect == 4){
+            HangManStructure.fourIncorrectAnswers();
+        } else if (numberIncorrect == 5){
+            HangManStructure.fiveIncorrectAnswers();
+        } else if (numberIncorrect == 6){
+            HangManStructure.sixIncorrectAnswers();
+        }
+    }
+
 
     public static void userGoesFirst() throws IOException, InterruptedException {
+        final Scanner sc = new Scanner(System.in);
         Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
         List<String> words = new ArrayList<>();
         while (scanner.hasNext()) {
             words.add(scanner.nextLine());
         }
-        String asterisk = new String(new char[words.size()]).replace("\0", "*");
-        int numberIncorrect = 0;
 
         HangManStructure.beginningStructure();
 
         System.out.println("Please guess a letter");
         Scanner keyboard = new Scanner(System.in);
         String letterGuess = keyboard.nextLine();
+        Random rand = new Random();
+        String word = words.get(rand.nextInt(words.size()));
 
-        if (!words.contains(letterGuess)){
+        if (!word.contains(letterGuess)){
+            System.out.println("Incorrect answer");
             ++numberIncorrect;
+            numberIncorrect();
+        } else{
+            System.out.println("That's correct");
         }
-        if (numberIncorrect == 1){
-           HangManStructure.oneIncorrectAnswer();
-        }
+        System.out.println("Please guess another letter");
+        String letterGuess2 = keyboard.nextLine();
 
-        if (!words.contains(letterGuess)){
+        if (!word.contains(letterGuess2)){
+            System.out.println("Incorrect answer");
             ++numberIncorrect;
-        }
-        if (numberIncorrect == 2){
-            HangManStructure.twoIncorrectAnswers();
+            numberIncorrect();
+        } else {
+            System.out.println("That's correct");
         }
 
-        if (!words.contains(letterGuess)){
+        System.out.println("Please guess another letter");
+        String letterGuess3 = keyboard.nextLine();
+
+        if (!word.contains(letterGuess3)){
+            System.out.println("Incorrect answer");
             ++numberIncorrect;
-        }
-        if (numberIncorrect == 3){
-            HangManStructure.threeIncorrectAnswers();
+            numberIncorrect();
+        } else {
+            System.out.println("That's correct");
         }
 
-        if (!words.contains(letterGuess)){
+        System.out.println("Please guess another letter");
+        String letterGuess4 = keyboard.nextLine();
+
+        if (!word.contains(letterGuess4)){
+            System.out.println("Incorrect answer");
             ++numberIncorrect;
+            numberIncorrect();
+        } else {
+            System.out.println("That's correct");
         }
 
-        if (numberIncorrect == 4){
-            HangManStructure.fourIncorrectAnswers();
-        }
+        System.out.println("Please guess another letter");
+        String letterGuess5 = keyboard.nextLine();
 
-        if (!words.contains(letterGuess)){
+        if (!word.contains(letterGuess5)){
+            System.out.println("Incorrect answer");
             ++numberIncorrect;
-        }
-        if (numberIncorrect == 5){
-            HangManStructure.fiveIncorrectAnswers();
+            numberIncorrect();
+        } else {
+            System.out.println("That's correct");
         }
 
-        if (!words.contains(letterGuess)){
+        System.out.println("Please guess another letter");
+        String letterGuess6 = keyboard.nextLine();
+
+        if (!word.contains(letterGuess6)){
+            System.out.println("GAME OVER");
             ++numberIncorrect;
-        }
-        if(numberIncorrect == 6){
-            HangManStructure.sixIncorrectAnswers();
+            numberIncorrect();
+            System.out.println("The correct answer was: " + word);
         }
     }
 
