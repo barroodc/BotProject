@@ -1,5 +1,6 @@
 import java.io.File;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import java.util.ArrayList;
@@ -18,7 +19,6 @@ public class HangMan {
 
     static int numberIncorrect = 0;
 
-
     private static void introToHangman() throws IOException, InterruptedException {
 
         File file = new File("/Users/christopher/Desktop/Hangman.txt");
@@ -31,6 +31,8 @@ public class HangMan {
 
         if (players.equals("Yes") || players.equals("yes")){
             System.out.println("Great lets get started!");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("Make sure to enter in only lowercase letters please");
             userGoesFirst();
             System.exit(0);
         } else{
@@ -55,7 +57,7 @@ public class HangMan {
         rockPaperScissorShoot();
     }
 
-    private static void rockPaperScissorShoot() throws InterruptedException {
+    private static void rockPaperScissorShoot() throws InterruptedException, FileNotFoundException {
         Random rand = new Random();
         String[] rockPaperScissor = {"Rock", "Paper", "Scissor"};
         String a = rockPaperScissor[rand.nextInt(rockPaperScissor.length)];
@@ -68,8 +70,6 @@ public class HangMan {
         System.out.println(ava);
 
         boolean valid = false;
-        int jamesWonRPS = 0;
-        int avaWonRPS = 0;
 
         while (!valid) {
 
@@ -79,48 +79,48 @@ public class HangMan {
                 System.out.println("Ava: Dam I guess you do");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Alright my human counterpart lets play!");
-                ++jamesWonRPS;
                 valid = true;
+                cpuFirstHangman.jamesWon();
             } else if (james.contains("Scissor") && ava.contains("Paper")){
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Alright my human counterpart lets play!");
-                ++jamesWonRPS;
                 valid = true;
+                cpuFirstHangman.jamesWon();
             } else if (james.contains("Paper") && ava.contains("Rock")){
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Alright my human counterpart lets play!");
-                ++jamesWonRPS;
                 valid = true;
+                cpuFirstHangman.jamesWon();
             } else if (ava.contains("Rock") && james.contains("Scissor")){
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
-                ++avaWonRPS;
                 valid = true;
+                cpuFirstHangman.avaWon();
             } else if (ava.contains("Scissor") && james.contains("Paper")){
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
-                ++avaWonRPS;
                 valid = true;
+                cpuFirstHangman.avaWon();
             } else if (ava.contains("Paper") && james.contains("Rock")){
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
-                ++avaWonRPS;
                 valid = true;
+                cpuFirstHangman.avaWon();
             } else {
                 System.out.println("James: Dam it was a tie. Lets try again.");
                 rockPaperScissorShoot();
@@ -146,7 +146,8 @@ public class HangMan {
     }
 
 
-    public static void userGoesFirst() throws IOException, InterruptedException {
+
+    public static void userGoesFirst() throws IOException {
         final Scanner sc = new Scanner(System.in);
         Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
         List<String> words = new ArrayList<>();
@@ -154,76 +155,91 @@ public class HangMan {
             words.add(scanner.nextLine());
         }
 
-        HangManStructure.beginningStructure();
+            HangManStructure.beginningStructure();
 
-        System.out.println("Please guess a letter");
-        Scanner keyboard = new Scanner(System.in);
-        String letterGuess = keyboard.nextLine();
-        Random rand = new Random();
-        String word = words.get(rand.nextInt(words.size()));
+            System.out.println("Please guess a letter");
+            Scanner keyboard = new Scanner(System.in);
+            String letterGuess = keyboard.nextLine();
+            Random rand = new Random();
+            String word = words.get(rand.nextInt(words.size()));
 
-        if (!word.contains(letterGuess)){
-            System.out.println("Incorrect answer");
-            ++numberIncorrect;
-            numberIncorrect();
-        } else{
-            System.out.println("That's correct");
-        }
-        System.out.println("Please guess another letter");
-        String letterGuess2 = keyboard.nextLine();
+            for (int i = 0; i < word.length(); i++){
+                 System.out.print("-");
+            }
 
-        if (!word.contains(letterGuess2)){
-            System.out.println("Incorrect answer");
-            ++numberIncorrect;
-            numberIncorrect();
-        } else {
-            System.out.println("That's correct");
-        }
 
-        System.out.println("Please guess another letter");
-        String letterGuess3 = keyboard.nextLine();
+            if (!word.contains(letterGuess)) {
+                System.out.println();
+                System.out.println("Incorrect answer");
+                ++numberIncorrect;
+                numberIncorrect();
+            } else {
+                System.out.println();
+                System.out.println("That's correct");
+            }
+            System.out.println("Please guess another letter");
+            String letterGuess2 = keyboard.nextLine();
 
-        if (!word.contains(letterGuess3)){
-            System.out.println("Incorrect answer");
-            ++numberIncorrect;
-            numberIncorrect();
-        } else {
-            System.out.println("That's correct");
-        }
+            if (!word.contains(letterGuess2)) {
+                System.out.println();
+                System.out.println("Incorrect answer");
+                ++numberIncorrect;
+                numberIncorrect();
+            } else {
+                System.out.println();
+                System.out.println("That's correct");
+            }
 
-        System.out.println("Please guess another letter");
-        String letterGuess4 = keyboard.nextLine();
+            System.out.println("Please guess another letter");
+            String letterGuess3 = keyboard.nextLine();
 
-        if (!word.contains(letterGuess4)){
-            System.out.println("Incorrect answer");
-            ++numberIncorrect;
-            numberIncorrect();
-        } else {
-            System.out.println("That's correct");
-        }
+            if (!word.contains(letterGuess3)) {
+                System.out.println();
+                System.out.println("Incorrect answer");
+                ++numberIncorrect;
+                numberIncorrect();
+            } else {
+                System.out.println();
+                System.out.println("That's correct");
+            }
 
-        System.out.println("Please guess another letter");
-        String letterGuess5 = keyboard.nextLine();
+            System.out.println("Please guess another letter");
+            String letterGuess4 = keyboard.nextLine();
 
-        if (!word.contains(letterGuess5)){
-            System.out.println("Incorrect answer");
-            ++numberIncorrect;
-            numberIncorrect();
-        } else {
-            System.out.println("That's correct");
-        }
+            if (!word.contains(letterGuess4)) {
+                System.out.println();
+                System.out.println("Incorrect answer");
+                ++numberIncorrect;
+                numberIncorrect();
+            } else {
+                System.out.println();
+                System.out.println("That's correct");
+            }
 
-        System.out.println("Please guess another letter");
-        String letterGuess6 = keyboard.nextLine();
+            System.out.println("Please guess another letter");
+            String letterGuess5 = keyboard.nextLine();
 
-        if (!word.contains(letterGuess6)){
-            System.out.println("GAME OVER");
-            ++numberIncorrect;
-            numberIncorrect();
-            System.out.println("The correct answer was: " + word);
-        }
+            if (!word.contains(letterGuess5)) {
+                System.out.println();
+                System.out.println("Incorrect answer");
+                ++numberIncorrect;
+                numberIncorrect();
+            } else {
+                System.out.println();
+                System.out.println("That's correct");
+            }
+
+            System.out.println("Please guess another letter");
+            String letterGuess6 = keyboard.nextLine();
+
+            if (!word.contains(letterGuess6)) {
+                System.out.println();
+                System.out.println("GAME OVER");
+                ++numberIncorrect;
+                numberIncorrect();
+                System.out.println("The correct answer was: " + word);
+            }
     }
-
 
     public static void main(String[] args) throws IOException, InterruptedException{
         introToHangman();
