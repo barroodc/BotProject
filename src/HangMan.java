@@ -29,13 +29,13 @@ public class HangMan {
         System.out.println("Would you like to go first?");
         String players = keyboard.nextLine();
 
-        if (players.equals("Yes") || players.equals("yes")){
+        if (players.equals("Yes") || players.equals("yes")) {
             System.out.println("Great lets get started!");
             TimeUnit.SECONDS.sleep(2);
             System.out.println("Make sure to enter in only lowercase letters please");
             userGoesFirst();
             System.exit(0);
-        } else if (players.equals("No") || players.equals("no")){
+        } else if (players.equals("No") || players.equals("no")) {
             System.out.println("James: I guess Ava and I will have to rock paper scissor shoot over it.");
         }
 
@@ -73,7 +73,7 @@ public class HangMan {
 
         while (!valid) {
 
-            if (james.contains("Rock") && ava.contains("Scissor")){
+            if (james.contains("Rock") && ava.contains("Scissor")) {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
@@ -81,7 +81,7 @@ public class HangMan {
                 System.out.println("James: Alright my human counterpart lets play!");
                 valid = true;
                 cpuFirstHangman.jamesWon();
-            } else if (james.contains("Scissor") && ava.contains("Paper")){
+            } else if (james.contains("Scissor") && ava.contains("Paper")) {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
@@ -89,7 +89,7 @@ public class HangMan {
                 System.out.println("Alright my human counterpart lets play!");
                 valid = true;
                 cpuFirstHangman.jamesWon();
-            } else if (james.contains("Paper") && ava.contains("Rock")){
+            } else if (james.contains("Paper") && ava.contains("Rock")) {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
@@ -97,7 +97,8 @@ public class HangMan {
                 System.out.println("Alright my human counterpart lets play!");
                 valid = true;
                 cpuFirstHangman.jamesWon();
-            } else if (ava.contains("Rock") && james.contains("Scissor")){
+            } else if (ava.contains("Rock") && james.contains("Scissor")) {
+                //Consider adding images to Rock Paper Scissors.
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
@@ -105,7 +106,7 @@ public class HangMan {
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
                 cpuFirstHangman.avaWon();
-            } else if (ava.contains("Scissor") && james.contains("Paper")){
+            } else if (ava.contains("Scissor") && james.contains("Paper")) {
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
@@ -113,7 +114,7 @@ public class HangMan {
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
                 cpuFirstHangman.avaWon();
-            } else if (ava.contains("Paper") && james.contains("Rock")){
+            } else if (ava.contains("Paper") && james.contains("Rock")) {
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
@@ -129,18 +130,18 @@ public class HangMan {
         }
     }
 
-    public static void numberIncorrect(){
-        if (numberIncorrect == 1){
+    public static void numberIncorrect() {
+        if (numberIncorrect == 1) {
             HangManStructure.oneIncorrectAnswer();
-        } else if (numberIncorrect == 2){
+        } else if (numberIncorrect == 2) {
             HangManStructure.twoIncorrectAnswers();
-        } else if (numberIncorrect == 3){
+        } else if (numberIncorrect == 3) {
             HangManStructure.threeIncorrectAnswers();
-        } else if (numberIncorrect == 4){
+        } else if (numberIncorrect == 4) {
             HangManStructure.fourIncorrectAnswers();
-        } else if (numberIncorrect == 5){
+        } else if (numberIncorrect == 5) {
             HangManStructure.fiveIncorrectAnswers();
-        } else if (numberIncorrect == 6){
+        } else if (numberIncorrect == 6) {
             HangManStructure.sixIncorrectAnswers();
         }
     }
@@ -155,118 +156,123 @@ public class HangMan {
             words.add(scanner.nextLine());
         }
 
-            HangManStructure.beginningStructure();
-            //Come up with a fill in the blank variable so I can reference it at the beginning.
-           //if correct fillInTheBlank equals letter in correct position.
-            System.out.println("Please guess a letter.");
-            Scanner keyboard = new Scanner(System.in);
-            String letterGuess = keyboard.nextLine();
-            Random rand = new Random();
-            String word = words.get(rand.nextInt(words.size()));
-            String dash = new String(new char[word.length()]).replace("\0", "-");
+        HangManStructure.beginningStructure();
+        //Come up with a fill in the blank variable so I can reference it at the beginning.
+        //if correct fillInTheBlank equals letter in correct position.
+        System.out.println("Please guess a letter.");
+        Scanner keyboard = new Scanner(System.in);
+        String letterGuess = keyboard.nextLine();
+        Random rand = new Random();
+        String word = words.get(rand.nextInt(words.size()));
+        String dash = new String(new char[word.length()]).replace("\0", "-");
 
-            if (!word.contains(letterGuess)) {
-                System.out.println();
-                System.out.println("Incorrect answer");
-                ++numberIncorrect;
-                numberIncorrect();
-            } else {
-                System.out.println();
-                System.out.println("That's correct");
-            }
-            System.out.println("Please guess another letter");
-             for (int i = 0; i < word.length(); i++){
-                 fillInTheBlank = "-";
-                 System.out.print(fillInTheBlank);
-            }
-             System.out.println();
-             String letterGuess2 = keyboard.nextLine();
 
-             if (!word.contains(letterGuess2)) {
-                System.out.println();
-                System.out.println("Incorrect answer");
-                ++numberIncorrect;
-                numberIncorrect();
-            } else {
-                System.out.println();
-                System.out.println("That's correct");
-                String dashReplace = new String(new char[word.length()]).replace("\0",letterGuess2);
-                System.out.println(dashReplace);
-            }
+        if (!word.contains(letterGuess)) {
+            System.out.println();
+            System.out.println("Incorrect answer");
+            ++numberIncorrect;
+            numberIncorrect();
+        } else {
+            System.out.println();
+            System.out.println("That's correct");
+        }
 
-            System.out.println("Please guess another letter");
-            for (int i = 0; i < word.length(); i++){
+        System.out.println("Please guess another letter");
+        for (int i = 0; i < word.length(); i++) {
             fillInTheBlank = "-";
             System.out.print(fillInTheBlank);
-            }
+        }
+        System.out.println();
+        String letterGuess2 = keyboard.nextLine();
+
+        if (!word.contains(letterGuess2)) {
             System.out.println();
-            String letterGuess3 = keyboard.nextLine();
-
-            if (!word.contains(letterGuess3)) {
-                System.out.println();
-                System.out.println("Incorrect answer");
-                ++numberIncorrect;
-                numberIncorrect();
-            } else {
-                System.out.println();
-                System.out.println("That's correct");
-            }
-
-            System.out.println("Please guess another letter");
-             for (int i = 0; i < word.length(); i++){
-             fillInTheBlank = "-";
-            System.out.print(fillInTheBlank);
-             }
+            System.out.println("Incorrect answer");
+            ++numberIncorrect;
+            numberIncorrect();
+        } else {
             System.out.println();
-            String letterGuess4 = keyboard.nextLine();
+            System.out.println("That's correct");
+            String dashReplace = new String(new char[word.length()]).replace("\0", letterGuess2);
+            System.out.println(dashReplace);
 
-            if (!word.contains(letterGuess4)) {
-                System.out.println();
-                System.out.println("Incorrect answer");
-                ++numberIncorrect;
-                numberIncorrect();
-            } else {
-                System.out.println();
-                System.out.println("That's correct");
-            }
+        }
 
-            System.out.println("Please guess another letter");
-            for (int i = 0; i < word.length(); i++){
+        System.out.println("Please guess another letter");
+        for (int i = 0; i < word.length(); i++) {
             fillInTheBlank = "-";
             System.out.print(fillInTheBlank);
-            }
+        }
+        System.out.println();
+        String letterGuess3 = keyboard.nextLine();
+
+        if (!word.contains(letterGuess3)) {
             System.out.println();
-            String letterGuess5 = keyboard.nextLine();
+            System.out.println("Incorrect answer");
+            ++numberIncorrect;
+            numberIncorrect();
+        } else {
+            System.out.println();
+            System.out.println("That's correct");
+        }
 
-
-            if (!word.contains(letterGuess5)) {
-                System.out.println();
-                System.out.println("Incorrect answer");
-                ++numberIncorrect;
-                numberIncorrect();
-            } else {
-                System.out.println();
-                System.out.println("That's correct");
-            }
-
-            System.out.println("Please guess another letter");
-            for (int i = 0; i < word.length(); i++){
+        System.out.println("Please guess another letter");
+        for (int i = 0; i < word.length(); i++) {
             fillInTheBlank = "-";
             System.out.print(fillInTheBlank);
-            }
+        }
+        System.out.println();
+        String letterGuess4 = keyboard.nextLine();
+
+        if (!word.contains(letterGuess4)) {
             System.out.println();
-            String letterGuess6 = keyboard.nextLine();
+            System.out.println("Incorrect answer");
+            ++numberIncorrect;
+            numberIncorrect();
+        } else {
+            System.out.println();
+            System.out.println("That's correct");
+        }
+
+        System.out.println("Please guess another letter");
+        for (int i = 0; i < word.length(); i++) {
+            fillInTheBlank = "-";
+            System.out.print(fillInTheBlank);
+        }
+        System.out.println();
+        String letterGuess5 = keyboard.nextLine();
 
 
-            if (!word.contains(letterGuess6)) {
-                System.out.println();
-                System.out.println("GAME OVER");
-                ++numberIncorrect;
-                numberIncorrect();
-                System.out.println("The correct answer was: " + word);
-            }
+        if (!word.contains(letterGuess5)) {
+            System.out.println();
+            System.out.println("Incorrect answer");
+            ++numberIncorrect;
+            numberIncorrect();
+        } else {
+            System.out.println();
+            System.out.println("That's correct");
+        }
+
+        System.out.println("Please guess another letter");
+        for (int i = 0; i < word.length(); i++) {
+            fillInTheBlank = "-";
+            System.out.print(fillInTheBlank);
+        }
+        System.out.println();
+        String letterGuess6 = keyboard.nextLine();
+
+
+        if (!word.contains(letterGuess6)) {
+            System.out.println();
+            System.out.println("GAME OVER");
+            ++numberIncorrect;
+            numberIncorrect();
+            System.out.println("The correct answer was: " + word);
+        }
 
     }
+
+
 
 
 
