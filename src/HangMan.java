@@ -166,7 +166,6 @@ public class HangMan {
         String word = words.get(rand.nextInt(words.size()));
         String dash = new String(new char[word.length()]).replace("\0", "-");
 
-
         if (!word.contains(letterGuess)) {
             System.out.println();
             System.out.println("Incorrect answer");
@@ -195,7 +194,10 @@ public class HangMan {
             System.out.println("That's correct");
             String dashReplace = new String(new char[word.length()]).replace("\0", letterGuess2);
             System.out.println(dashReplace);
-
+            if (word.contains(letterGuess2)){
+                System.out.println(word.replace("-",letterGuess2));
+                System.out.println(fillInTheBlank);
+            }
         }
 
         System.out.println("Please guess another letter");
