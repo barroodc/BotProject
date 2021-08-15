@@ -147,6 +147,7 @@ public class HangMan {
     }
 
 
+
     public static void userGoesFirst() throws IOException {
         final Scanner sc = new Scanner(System.in);
         Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
@@ -192,19 +193,14 @@ public class HangMan {
         } else {
             System.out.println();
             System.out.println("That's correct");
-            String dashReplace = new String(new char[word.length()]).replace("\0", letterGuess2);
-            System.out.println(dashReplace);
-            if (word.contains(letterGuess2)){
-                System.out.println(word.replace("-",letterGuess2));
-                System.out.println(fillInTheBlank);
+            for (int i = 0; i < word.length(); i++) {
+                fillInTheBlank = "-";
+                System.out.print(fillInTheBlank);
             }
+            System.out.println(letterGuess2.charAt(0));
         }
 
         System.out.println("Please guess another letter");
-        for (int i = 0; i < word.length(); i++) {
-            fillInTheBlank = "-";
-            System.out.print(fillInTheBlank);
-        }
         System.out.println();
         String letterGuess3 = keyboard.nextLine();
 
@@ -216,13 +212,14 @@ public class HangMan {
         } else {
             System.out.println();
             System.out.println("That's correct");
+            for (int i = 0; i < word.length(); i++) {
+                fillInTheBlank = "-";
+                System.out.print(fillInTheBlank);
+            }
+            System.out.println(letterGuess3.charAt(0));
         }
 
         System.out.println("Please guess another letter");
-        for (int i = 0; i < word.length(); i++) {
-            fillInTheBlank = "-";
-            System.out.print(fillInTheBlank);
-        }
         System.out.println();
         String letterGuess4 = keyboard.nextLine();
 
@@ -234,13 +231,14 @@ public class HangMan {
         } else {
             System.out.println();
             System.out.println("That's correct");
+            for (int i = 0; i < word.length(); i++) {
+                fillInTheBlank = "-";
+                System.out.print(fillInTheBlank);
+            }
+            System.out.println(letterGuess4.charAt(0));
         }
 
         System.out.println("Please guess another letter");
-        for (int i = 0; i < word.length(); i++) {
-            fillInTheBlank = "-";
-            System.out.print(fillInTheBlank);
-        }
         System.out.println();
         String letterGuess5 = keyboard.nextLine();
 
@@ -253,13 +251,14 @@ public class HangMan {
         } else {
             System.out.println();
             System.out.println("That's correct");
+            for (int i = 0; i < word.length(); i++) {
+                fillInTheBlank = "-";
+                System.out.print(fillInTheBlank);
+            }
+            System.out.println(letterGuess5.charAt(0));
         }
 
         System.out.println("Please guess another letter");
-        for (int i = 0; i < word.length(); i++) {
-            fillInTheBlank = "-";
-            System.out.print(fillInTheBlank);
-        }
         System.out.println();
         String letterGuess6 = keyboard.nextLine();
 
@@ -271,12 +270,8 @@ public class HangMan {
             numberIncorrect();
             System.out.println("The correct answer was: " + word);
         }
-
+          System.out.println(word);
     }
-
-
-
-
 
 
 
