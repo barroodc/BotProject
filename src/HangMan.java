@@ -20,20 +20,21 @@ public class HangMan {
     static String letter;
     static int numberIncorrect = 0;
 
-    private static void introToHangman() throws IOException, InterruptedException {
+    public static void introToHangman() throws IOException, InterruptedException {
 
         File file = new File("/Users/christopher/Desktop/Hangman.txt");
         Scanner sc = new Scanner(file);
 
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.println("Would you like to go first?");
+        System.out.println("Ava: Would you like to go first?");
+        System.out.println(">");
         String players = keyboard.nextLine();
 
         if (players.equals("Yes") || players.equals("yes")) {
-            System.out.println("Great lets get started!");
+            System.out.println("Ava: Great lets get started!");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("Make sure to enter in only lowercase letters please");
+            System.out.println("Ava: Make sure to enter in only lowercase letters please");
             userGoesFirst();
             System.exit(0);
         } else if (players.equals("No") || players.equals("no")) {
@@ -195,6 +196,11 @@ public class HangMan {
                     numberIncorrect();
                     break;
                 }
+            }
+
+            if (numberIncorrect == 6){
+                System.out.println("GAME OVER");
+                System.exit(0);
             }
         }
     }

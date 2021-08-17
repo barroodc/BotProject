@@ -1,10 +1,11 @@
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class TournamentIntro {
     final static Scanner sc = new Scanner(System.in);
 
-    static void allComeTogetherGreetings() throws InterruptedException {
+    public static void allComeTogetherGreetings() throws InterruptedException, IOException {
         System.out.println("James: Hey sis");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Ava: Hey bro.");
@@ -22,7 +23,7 @@ public class TournamentIntro {
 
         if (yesOrNo.equals("yes") || yesOrNo.equals("Yes")){
             System.out.println("Ava: That's aweomse!");
-
+            HangMan.introToHangman();
         } else if (yesOrNo.equals("no") || yesOrNo.equals("No")){
             System.out.println("Ava: No worries at all my guy.");
         }
