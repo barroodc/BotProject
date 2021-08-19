@@ -6,10 +6,7 @@ import java.util.concurrent.TimeUnit;
 public class cpuFirstHangman {
 //cpu should guess from an algorithm that selects random letters from the alphabet.
     //These random letters will be cross referenced with the word from the list.
-    static boolean running = true;
     static Scanner s = new Scanner(System.in);
-    static char[] lettersFromWord;
-    static String letter;
     static int numberIncorrect = 0;
 
     public static void avaWon() throws IOException, InterruptedException {
@@ -60,7 +57,7 @@ public class cpuFirstHangman {
     public static int james = 0;
 
 
-    public static void avaCpuGoesFirst() throws IOException {
+    public static void avaCpuGoesFirst() throws IOException, InterruptedException {
         Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
 
         List<String> words = new ArrayList<>();
@@ -71,28 +68,38 @@ public class cpuFirstHangman {
 
         Random rand = new Random();
         String word = words.get(rand.nextInt(words.size()));
-        lettersFromWord = new char[word.length()];
-        Arrays.fill(lettersFromWord, '_');
 
-        char c;
 
-        ArrayList<Character> avaGuesses = new ArrayList<>();
+        ArrayList<char[]> avaGuesses = new ArrayList<>();
 
-        for (c = 'a'; c <= 'z'; ++c){
-             avaGuesses.add(c);
-        }
+        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g',
+                'h', 'i', 'j', 'k', 'l', 'm', 'n',
+                'o', 'p', 'q', 'r', 's', 't', 'u',
+                'v', 'w', 'x', 'y', 'z'};
 
-        while (running) {
-            System.out.print("\nYour word is: ");
-            for (int x = 0; x < lettersFromWord.length; x++) {
-                if (lettersFromWord[x] == '_') {
-                    System.out.print(" _");
-                } else {
-                    System.out.print(" " + lettersFromWord[x]);
-                }
+
+        Random random = new Random();
+
+        avaGuesses.add(alphabet);
+
+       /*for (int i = 0; i < 1; i++){
+           String abc = "abcdefghijklmnopqrstuvwxyz";
+           char letter = abc.charAt(random.nextInt(abc.length()));
+           System.out.println(letter);
+           if (word.charAt(0) == letter){
+               System.out.println("Yay I got one");
+           }*/
+
+        for (int j = 0; j < word.length(); j++) {
+            String abc = "abcdefghijklmnopqrstuvwxyz";
+            char letter = abc.charAt(random.nextInt(abc.length()));
+            char ch = word.charAt(j);
+            if (letter == ch){
+                System.out.println("Character " + letter + " found in string "+ word);
             }
         }
     }
+
 
     public static void jamesCpuGoesFirst() throws IOException {
 
