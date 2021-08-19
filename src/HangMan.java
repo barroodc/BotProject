@@ -28,7 +28,7 @@ public class HangMan {
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Ava: Would you like to go first?");
-        System.out.println(">");
+        System.out.print("> ");
         String players = keyboard.nextLine();
 
         if (players.equals("Yes") || players.equals("yes")) {
@@ -59,7 +59,7 @@ public class HangMan {
         rockPaperScissorShoot();
     }
 
-    private static void rockPaperScissorShoot() throws InterruptedException, FileNotFoundException {
+    private static void rockPaperScissorShoot() throws InterruptedException, IOException {
         Random rand = new Random();
         String[] rockPaperScissor = {"Rock", "Paper", "Scissor"};
         String a = rockPaperScissor[rand.nextInt(rockPaperScissor.length)];
@@ -198,8 +198,16 @@ public class HangMan {
                 }
             }
 
+            for (int i = 0; i < word.length(); i++){
+                if (Arrays.equals(lettersFromWord, word.toCharArray())){
+                    System.out.println("You won!");
+                    System.exit(0);
+                }
+            }
+
             if (numberIncorrect == 6){
                 System.out.println("GAME OVER");
+                System.out.println("The word was: " + word);
                 System.exit(0);
             }
         }

@@ -13,23 +13,33 @@ public class cpuFirstHangman {
     static String letter;
     static int numberIncorrect = 0;
 
-    public static void avaWon() throws FileNotFoundException, InterruptedException {
+    public static void avaWon() throws IOException, InterruptedException {
         File file = new File("/Users/christopher/Desktop/Hangman.txt");
         Scanner sc = new Scanner(file);
         System.out.println("Ava: Since I am the clear winner I will gladly go first");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("James: I wish our human friend could see me rolling my eyes at you right now");
         TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: Haha so funny. Someone is just a sore loser.");
+        TimeUnit.SECONDS.sleep(2);
         System.out.println("Ava: Alright, enough talk lets play!");
+        cpuGoesFirst();
     }
 
-    public static void jamesWon() throws FileNotFoundException, InterruptedException {
+    public static void jamesWon() throws IOException, InterruptedException {
         File file = new File("/Users/christopher/Desktop/Hangman.txt");
         Scanner sc = new Scanner(file);
         System.out.println("James: Haha I knew I would win. In your face Ava!");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Yeah yeah yeah, blah blah blah");
+        System.out.println("Ava: Yeah yeah yeah, blah blah blah");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: So are you going to go or not?");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Yeah yeah, I'm going, I'm going.");
+        cpuGoesFirst();
     }
+
+    //If I select to go first I need two more james and ava methods like the ones above.
 
     public static void numberIncorrect(){
         if (numberIncorrect == 1){
@@ -47,9 +57,16 @@ public class cpuFirstHangman {
         }
     }
 
-    public static void userGoesFirst() throws IOException, InterruptedException {
-        Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
+    public static int ava = 0;
+    public static int james = 0;
+    public static char c;
 
+    public static void cpuGoesFirst() throws IOException {
+        Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
+        List<Character> chars = new ArrayList<>();
+        for(c = 'a';c <= 'z';++c){
+          chars.add(c);
+        }
         List<String> words = new ArrayList<>();
         while (scanner.hasNext()) {
             words.add(scanner.nextLine());
@@ -98,8 +115,6 @@ public class cpuFirstHangman {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
+        avaWon();
     }
-
-
 }
