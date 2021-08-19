@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +22,7 @@ public class cpuFirstHangman {
         System.out.println("Ava: Haha so funny. Someone is just a sore loser.");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Ava: Alright, enough talk lets play!");
-        cpuGoesFirst();
+        avaCpuGoesFirst();
     }
 
     public static void jamesWon() throws IOException, InterruptedException {
@@ -36,7 +35,7 @@ public class cpuFirstHangman {
         System.out.println("Ava: So are you going to go or not?");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("James: Yeah yeah, I'm going, I'm going.");
-        cpuGoesFirst();
+
     }
 
     //If I select to go first I need two more james and ava methods like the ones above.
@@ -59,26 +58,29 @@ public class cpuFirstHangman {
 
     public static int ava = 0;
     public static int james = 0;
-    public static char c;
 
-    public static void cpuGoesFirst() throws IOException {
+
+    public static void avaCpuGoesFirst() throws IOException {
         Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
-        List<Character> chars = new ArrayList<>();
-        for(c = 'a';c <= 'z';++c){
-          chars.add(c);
-        }
+
         List<String> words = new ArrayList<>();
         while (scanner.hasNext()) {
             words.add(scanner.nextLine());
         }
         HangManStructure.beginningStructure();
 
-
         Random rand = new Random();
         String word = words.get(rand.nextInt(words.size()));
         lettersFromWord = new char[word.length()];
         Arrays.fill(lettersFromWord, '_');
 
+        char c;
+
+        ArrayList<Character> avaGuesses = new ArrayList<>();
+
+        for (c = 'a'; c <= 'z'; ++c){
+             avaGuesses.add(c);
+        }
 
         while (running) {
             System.out.print("\nYour word is: ");
@@ -89,32 +91,15 @@ public class cpuFirstHangman {
                     System.out.print(" " + lettersFromWord[x]);
                 }
             }
-
-            System.out.print("\nGuess a letter please: ");
-            letter = s.next();
-
-            for (int i = 0; i < word.length(); i++) {
-                if (word.substring(i, i + 1).equals(letter)) {
-                    lettersFromWord[i] = letter.charAt(0);
-                }
-            }
-
-            for (int i = 0; i < word.length(); i++){
-                if (!word.contains(letter)){
-                    numberIncorrect++;
-                    numberIncorrect();
-                    break;
-                }
-            }
-
-            if (numberIncorrect == 6){
-                System.out.println("GAME OVER");
-                System.exit(0);
-            }
         }
     }
 
+    public static void jamesCpuGoesFirst() throws IOException {
+
+
+    }
+
     public static void main(String[] args) throws IOException, InterruptedException {
-        avaWon();
+       avaCpuGoesFirst();
     }
 }
