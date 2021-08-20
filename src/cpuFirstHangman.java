@@ -13,6 +13,7 @@ public class cpuFirstHangman {
     public static char[] lettersFromWord;
 
 
+
     public static void avaWon() throws IOException, InterruptedException {
         File file = new File("/Users/christopher/Desktop/Hangman.txt");
         Scanner sc = new Scanner(file);
@@ -83,30 +84,58 @@ public class cpuFirstHangman {
         Random rand = new Random();
         String word = words.get(rand.nextInt(words.size()));
 
-        char[] alpha = new char[26];
-        for(int i = 0; i < 26; i++){
-            alpha[i] = (char)(97 + i);
-        }
-
-        int count = 0;
-        int numberCorrect = 0;
         Random random = new Random();
         char randomizedCharacter = (char) (random.nextInt(26) + 'a');
 
+        ArrayList<Character> list  = new ArrayList<>();
+        ArrayList<Character> randomList = new ArrayList<>();
+
         for (int i = 0; i < word.length(); i++){
-            if (word.charAt(i) != randomizedCharacter){
-                numberIncorrect++;
-                System.out.println(word.charAt(i));
+            char c = word.charAt(i);
+            list.add(c);
+        }
+
+        System.out.println(list);
+
+        randomList.add(randomizedCharacter);
+
+        randomList.retainAll(list);
+
+        ArrayList<ArrayList<Character>> finalList = new ArrayList<>();
+        finalList.add(list);
+        finalList.add(randomList);
+
+        System.out.println(randomizedCharacter);
+
+        int numberCorrect = 0;
+
+        while (numberIncorrect != 6) {
+
+            for (int i = 0; i < finalList.size(); i++) {
+                if (finalList.get(i).contains(randomizedCharacter)) {
+                    numberCorrect++;
+                } else {
+                    numberIncorrect();
+                    numberIncorrect++;
+
+                }
+
+                if (numberCorrect == word.length()){
+                    System.out.println("You won");
+                }
+
+                if (numberIncorrect >= 6){
+                    System.out.println("You lose");
+                }
             }
         }
 
-
         System.out.println();
         System.out.println(word);
+        System.out.println("Number of incorrect: " + numberIncorrect);
+        System.out.println("Number of correct: " + numberCorrect);
 
     }
-
-
 
 
     public static void jamesCpuGoesFirst() throws IOException {
