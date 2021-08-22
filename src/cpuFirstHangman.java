@@ -7,6 +7,9 @@ import java.util.stream.IntStream;
 
 public class cpuFirstHangman {
     static int numberIncorrect = 0;
+    static boolean running = true;
+    static Scanner Input = new Scanner(System.in);
+    static int MAX = 26;
 
 
     public static void avaWon() throws IOException, InterruptedException {
@@ -65,24 +68,57 @@ public class cpuFirstHangman {
             words.add(scanner.nextLine());
         }
         HangManStructure.beginningStructure();
+
         Random rand = new Random();
         String word = words.get(rand.nextInt(words.size()));
+        char[] word1 = word.toCharArray();
+        char[] word2 = word.toCharArray();
 
-        Random random = new Random();
+        char[] alphabet = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+                'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+                'w', 'x', 'y', 'z'};
 
 
-        char randomizedCharacter = (char) (random.nextInt(26) + 'a');
+        //Arrays.fill(word1, '-');
 
-        char dash = '-';
+        Arrays.fill(word1, '_');
 
-        for (int i = 0; i < word.length(); i++){
-            System.out.print(" " + dash);
+        String res = "";
+
+        res = res + alphabet[(int) (Math.random() * 10 % MAX)];
+
+
+        System.out.print("\nYour word is: ");
+        for (int x = 0; x < word1.length; x++) {
+            if (word1[x] == '_') {
+                System.out.print(" _");
+            } else {
+                System.out.print(" " + word1[x]);
+            }
+
+            for (int i = 0; i < word.length(); i++) {
+                if (word.substring(i, i + 1).equals(res)) {
+                    word1[i] = res.charAt(0);
+                }
+            }
         }
 
-        for (int i = 0; i < word.length(); i++){
-            System.out.println();
-        }
+        //System.out.println(String.valueOf(word1));
+
+
+
+
+
+        System.out.println();
+        System.out.println(word2);
+        System.out.println(res);
     }
+
+
+
+
+
+
 
     public static void jamesCpuGoesFirst () throws IOException {
 
