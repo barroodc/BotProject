@@ -6,12 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class cpuFirstHangman {
-    //cpu should guess from an algorithm that selects random letters from the alphabet.
-    //These random letters will be cross referenced with the word from the list.
-    static Scanner s = new Scanner(System.in);
     static int numberIncorrect = 0;
-    public static char[] lettersFromWord;
-
 
 
     public static void avaWon() throws IOException, InterruptedException {
@@ -61,17 +56,6 @@ public class cpuFirstHangman {
     public static int ava = 0;
     public static int james = 0;
 
-    public static String shuffleWords(String text){
-        List<Character> characters =  text.chars().mapToObj(c -> (char)c).collect(Collectors.toList());
-        StringBuilder result = new StringBuilder();
-        IntStream.range(0,text.length()).forEach((index) -> {
-            int randomPosition = new Random().nextInt(characters.size());
-            result.append(characters.get(randomPosition));
-            characters.remove(randomPosition);
-        });
-        return result.toString();
-    }
-
 
     public static void avaCpuGoesFirst() throws IOException {
         Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
@@ -85,66 +69,28 @@ public class cpuFirstHangman {
         String word = words.get(rand.nextInt(words.size()));
 
         Random random = new Random();
+
+
         char randomizedCharacter = (char) (random.nextInt(26) + 'a');
 
-        ArrayList<Character> list  = new ArrayList<>();
-        ArrayList<Character> randomList = new ArrayList<>();
+        char dash = '-';
 
         for (int i = 0; i < word.length(); i++){
-            char c = word.charAt(i);
-            list.add(c);
+            System.out.print(" " + dash);
         }
 
-        System.out.println(list);
-
-        randomList.add(randomizedCharacter);
-
-        randomList.retainAll(list);
-
-        ArrayList<ArrayList<Character>> finalList = new ArrayList<>();
-        finalList.add(list);
-        finalList.add(randomList);
-
-        System.out.println(randomizedCharacter);
-
-        int numberCorrect = 0;
-
-        while (numberIncorrect != 6) {
-
-            for (int i = 0; i < finalList.size(); i++) {
-                if (finalList.get(i).contains(randomizedCharacter)) {
-                    numberCorrect++;
-                } else {
-                    numberIncorrect();
-                    numberIncorrect++;
-
-                }
-
-                if (numberCorrect == word.length()){
-                    System.out.println("You won");
-                }
-
-                if (numberIncorrect >= 6){
-                    System.out.println("You lose");
-                }
-            }
+        for (int i = 0; i < word.length(); i++){
+            System.out.println();
         }
-
-        System.out.println();
-        System.out.println(word);
-        System.out.println("Number of incorrect: " + numberIncorrect);
-        System.out.println("Number of correct: " + numberCorrect);
-
     }
 
-
-    public static void jamesCpuGoesFirst() throws IOException {
+    public static void jamesCpuGoesFirst () throws IOException {
 
 
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-       avaCpuGoesFirst();
+    public static void main (String[]args) throws IOException, InterruptedException {
+        avaCpuGoesFirst();
     }
 }
 
