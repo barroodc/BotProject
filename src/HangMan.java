@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import java.sql.Time;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
@@ -26,6 +27,30 @@ public class HangMan {
         Scanner sc = new Scanner(file);
 
         Scanner keyboard = new Scanner(System.in);
+
+        System.out.println("Ava: As a surprise and a thank you for hanging out with us today we have something for you.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: We created a whole entire hangman game.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: James and I put our circuit boards together and came up with a list of words.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: It is with a twist though.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Ava and I are going to have some fun as well.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: We made a little wadger with each other.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: If you guess one of our words then either Ava or I will get a point");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: It all depends on whose word it is");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: If I win I get to say Im better than Ava in everything.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Ava: And when I win I am going to say the same thing.");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("James: Enough talk. Lets play");
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Agreed");
 
         System.out.println("Ava: Would you like to go first?");
         System.out.print("> ");
@@ -82,7 +107,6 @@ public class HangMan {
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Alright my human counterpart lets play!");
                 valid = true;
-                cpuFirstHangman.jamesWon();
             } else if (james.contains("Scissor") && ava.contains("Paper")) {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
@@ -90,7 +114,6 @@ public class HangMan {
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Alright my human counterpart lets play!");
                 valid = true;
-                cpuFirstHangman.jamesWon();
             } else if (james.contains("Paper") && ava.contains("Rock")) {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
@@ -98,7 +121,6 @@ public class HangMan {
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Alright my human counterpart lets play!");
                 valid = true;
-                cpuFirstHangman.jamesWon();
             } else if (ava.contains("Rock") && james.contains("Scissor")) {
                 //Consider adding images to Rock Paper Scissors.
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
@@ -107,7 +129,6 @@ public class HangMan {
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
-                cpuFirstHangman.avaWon();
             } else if (ava.contains("Scissor") && james.contains("Paper")) {
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
@@ -115,7 +136,6 @@ public class HangMan {
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
-                cpuFirstHangman.avaWon();
             } else if (ava.contains("Paper") && james.contains("Rock")) {
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
@@ -123,7 +143,6 @@ public class HangMan {
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
-                cpuFirstHangman.avaWon();
             } else {
                 System.out.println("James: Dam it was a tie. Lets try again.");
                 rockPaperScissorShoot();
@@ -184,6 +203,8 @@ public class HangMan {
             System.out.print("\nGuess a letter please: ");
             letter = s.next();
 
+            //need to create ava and james objects here
+
             for (int i = 0; i < word.length(); i++) {
                 if (word.substring(i, i + 1).equals(letter)) {
                     lettersFromWord[i] = letter.charAt(0);
@@ -217,6 +238,7 @@ public class HangMan {
         introToHangman();
      }
     }
+
 
 
 
