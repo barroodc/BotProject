@@ -55,7 +55,10 @@ public class HangMan {
         System.out.println("James: Enough talk. Lets play");
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Ava: Agreed");
-        userGoesFirst();
+        System.out.println();
+        System.out.println("ROUND 1");
+        System.out.println();
+        letsPlayHangman();
     }
 
 
@@ -78,7 +81,7 @@ public class HangMan {
 
 
 
-    public static void userGoesFirst() throws IOException, InterruptedException {
+    public static void letsPlayHangman() throws IOException, InterruptedException {
         Scanner scanner = new Scanner(new File("/Users/christopher/Desktop/Hangman.txt"));
         Scanner scanner2 = new Scanner(new File("/Users/christopher/Desktop/JamesWords.txt"));
         Scanner scanner3 = new Scanner(new File("/Users/christopher/Desktop/AvasWords.txt"));
@@ -94,7 +97,6 @@ public class HangMan {
         String word = words.get(rand.nextInt(words.size()));
         lettersFromWord = new char[word.length()];
         Arrays.fill(lettersFromWord, '_');
-
 
         while (running) {
             System.out.print("\nYour word is: ");
@@ -133,6 +135,7 @@ public class HangMan {
                         String line = scanner2.nextLine();
                         if (line.contains(word)){
                             System.out.println("James: In your face Ava!");
+                            System.out.println();
                             jamesPoint++;
                         }
                     }
@@ -141,11 +144,12 @@ public class HangMan {
                         String line = scanner3.nextLine();
                         if (line.contains(word)){
                             System.out.println("Ava: Hahaha one more to go.");
+                            System.out.println();
                             avasPoint++;
                         }
                     }
+                    HangManRound2.hangmanRound2();
 
-                    System.exit(0);
                 }
             }
 
@@ -157,6 +161,7 @@ public class HangMan {
                     String line = scanner2.nextLine();
                     if (line.contains(word)){
                         System.out.println("James: In your face Ava!");
+                        System.out.println();
                         jamesPoint++;
                     }
                 }
@@ -165,10 +170,11 @@ public class HangMan {
                     String line = scanner3.nextLine();
                     if (line.contains(word)){
                         System.out.println("Ava: Hahaha one more to go.");
+                        System.out.println();
                         avasPoint++;
                     }
                 }
-                System.exit(0);
+                HangManRound2.hangmanRound2();
             }
         }
     }
