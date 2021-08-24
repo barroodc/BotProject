@@ -128,6 +128,23 @@ public class HangMan {
             for (int i = 0; i < word.length(); i++){
                 if (Arrays.equals(lettersFromWord, word.toCharArray())){
                     System.out.println("You won!");
+
+                    while (scanner2.hasNext()){
+                        String line = scanner2.nextLine();
+                        if (line.contains(word)){
+                            System.out.println("James: In your face Ava!");
+                            jamesPoint++;
+                        }
+                    }
+
+                    while (scanner3.hasNext()){
+                        String line = scanner3.nextLine();
+                        if (line.contains(word)){
+                            System.out.println("Ava: Hahaha one more to go.");
+                            avasPoint++;
+                        }
+                    }
+
                     System.exit(0);
                 }
             }
