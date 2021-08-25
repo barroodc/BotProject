@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class JamesTiesAva {
-    private static void rockPaperScissorShoot() throws InterruptedException, IOException {
+    public static void rockPaperScissorShoot() throws InterruptedException, IOException {
 
         System.out.println("Rock");
         TimeUnit.SECONDS.sleep(2);

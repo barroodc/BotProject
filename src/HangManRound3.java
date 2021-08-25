@@ -118,6 +118,19 @@ public class HangManRound3 {
                         avasPoint++;
                     }
                 }
+
+                if (jamesPoint > avasPoint){
+                    System.out.println("James: I win");
+                }
+
+                if (avasPoint > jamesPoint){
+                    System.out.println("Ava: I win");
+                }
+
+                if (avasPoint == jamesPoint){
+                    System.out.println("Dam, it looks like we have to play rock,paper, scissor to handle this.");
+                    JamesTiesAva.rockPaperScissorShoot();
+                }
                 System.exit(0);
             }
         }
