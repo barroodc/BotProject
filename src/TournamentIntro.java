@@ -20,12 +20,14 @@ public class TournamentIntro {
         TimeUnit.SECONDS.sleep(2);
 
         String yesOrNo = sc.next();
+        System.out.println(">");
 
         if (yesOrNo.equals("yes") || yesOrNo.equals("Yes")){
             System.out.println("Ava: That's aweomse!");
             HangMan.introToHangman();
         } else if (yesOrNo.equals("no") || yesOrNo.equals("No")){
             System.out.println("Ava: No worries at all my guy.");
+            FinalGoodbyes.JamesAndAvaFarewell();
         }
     }
 }

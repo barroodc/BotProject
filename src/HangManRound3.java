@@ -121,10 +121,12 @@ public class HangManRound3 {
 
                 if (jamesPoint > avasPoint){
                     System.out.println("James: I win");
+                    FinalGoodbyes.JamesAndAvaFarewell();
                 }
 
                 if (avasPoint > jamesPoint){
                     System.out.println("Ava: I win");
+                    FinalGoodbyes.JamesAndAvaFarewell();
                 }
 
                 if (avasPoint == jamesPoint){

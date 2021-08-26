@@ -32,45 +32,39 @@ public class JamesTiesAva {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.println("James: Alright my human counterpart lets play!");
                 valid = true;
+                FinalGoodbyes.JamesAndAvaFarewell();
             } else if (james.contains("Scissor") && ava.contains("Paper")) {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.println("Alright my human counterpart lets play!");
                 valid = true;
+                FinalGoodbyes.JamesAndAvaFarewell();
             } else if (james.contains("Paper") && ava.contains("Rock")) {
                 System.out.println("James: Yayyyy looks like I win!");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Ava: Dam I guess you do");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.println("Alright my human counterpart lets play!");
                 valid = true;
+                FinalGoodbyes.JamesAndAvaFarewell();
             } else if (ava.contains("Rock") && james.contains("Scissor")) {
                 //Consider adding images to Rock Paper Scissors.
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
+                FinalGoodbyes.JamesAndAvaFarewell();
             } else if (ava.contains("Scissor") && james.contains("Paper")) {
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
+                FinalGoodbyes.JamesAndAvaFarewell();
             } else if (ava.contains("Paper") && james.contains("Rock")) {
                 System.out.println("Ava: Haha I knew I'd win. Not a shock really to be honest hehe :)");
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("James: Yeah yeah yeah good game. You won fair and square.");
-                TimeUnit.SECONDS.sleep(2);
-                System.out.println("Ava: Okay my human from another motherboard lets play some hangman!");
                 valid = true;
+                FinalGoodbyes.JamesAndAvaFarewell();
             } else {
                 System.out.println("James: Dam it was a tie. Lets try again.");
                 rockPaperScissorShoot();
