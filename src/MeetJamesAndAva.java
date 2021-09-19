@@ -16,5 +16,8 @@ public class MeetJamesAndAva {
         System.out.println(" \\" + "__________/");
 
         System.out.println("   JAMES" + "             " + "         AVA");
+
+
+        System.out.println("Player One");                   System.out.println("Player Two");
     }
 }
