@@ -18,6 +18,6 @@ public class MeetJamesAndAva {
         System.out.println("   JAMES" + "             " + "         AVA");
 
 
-        System.out.println("Player One");                   System.out.println("Player Two");
+        System.out.println("Player One                Player Two");
     }
 }
